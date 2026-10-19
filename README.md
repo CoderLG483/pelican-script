@@ -43,4 +43,5 @@ pelican-script/
 │   ├── navigation.js   # Mobile drawer toggles and accessible focus traps
 │   └── forms.js        # Dynamic validation and WhatsApp API message encoder
 ├── index.html          # Semantic DOM entry point
+├── docs/		# Software documentation for the web portal
 └── README.md
