@@ -56,11 +56,20 @@
 
             <!--First CTA-->
             <div class="hero-actions">
-                <a href="https://wa.me/18764883919" class="hero-button" aria-label="Chat on WhatsApp">
-                    <img src="buttons/wa-large.png" alt="Chat on WhatsApp">
+                <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20a%20website%20for%20my%20business"
+                    class="btn-whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Contact Pelican Script on WhatsApp">
+                    <img src="icons/wa-white.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="whatsapp-icon"
+                        width="24"
+                        height="24">
+                    <span class="btn-text">Contact Us on WhatsApp</span>
                 </a>
             </div>
-
             <figure class="hero-showcase">
                 <img src="img/QR.png"
                     alt="QR code"
@@ -73,4 +82,25 @@
             </figure>
         </div>
     </section>
+
+    <!--Social Proof-->
+    <section class="metrics-section" id="metrics" aria-label="Key Performance Metrics">
+        <div class="stats-container">
+            <ul class="stats-list">
+                <li class="stat-item">
+                    <span class="stat-value" data-target="99.9">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </li>
+                <li class="stat-item">
+                    <span class="stat-value" data-target="1.2">1.2s</span>
+                    <span class="stat-label">Average Load Time</span>
+                </li>
+                <li class="stat-item">
+                    <span class="stat-value" data-target="95">95%</span>
+                    <span class="stat-label">Mobile Optimization</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="scripts/metrics.js" defer></script>
 </main>

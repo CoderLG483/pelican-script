@@ -1,0 +1,93 @@
+/*WhatsApp CTA styling*/
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: #25D366;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px; /* Pill shape */
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/*Stats Styling*/
+.metrics-section {
+  padding: 2.5rem 1rem;
+  background-color: #f8fafc
+}
+
+.stats-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stat-item {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0e7490;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #475569;
+  font-weight: 500;
+}
+/*Tablet/Desktop expanmsion*/
+@media (min-width: 640px) {
+  .stats-list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 1.25rem 1rem;
+  }
+}
