@@ -1,4 +1,172 @@
 /* ==============================================
+   HIGH-VISIBILITY 45° PCB TRACE PATTERN
+   ============================================== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #f8fafc;
+  background-color: #020617; /* Deep terminal base */
+
+  /* Layer 1: Vivid 45° PCB Bus Lines & Nodes
+     Layer 2: Sapphire-to-Obsidian Background Gradient */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2338bdf8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.20'%3E%3Cpath d='M0 20 h30 l20 20 h40 l15 15 v45' /%3E%3Cpath d='M20 120 v-30 l25 -25 h35 l20 -20 v-45' /%3E%3Cpath d='M60 0 v25 l15 15 h30 l15 15' /%3E%3Cpath d='M0 80 h25 l15 15 v25' /%3E%3C/g%3E%3Cg fill='%2338bdf8' opacity='0.55'%3E%3Ccircle cx='50' cy='40' r='3.5' /%3E%3Ccircle cx='90' cy='40' r='2.5' /%3E%3Ccircle cx='105' cy='55' r='2.5' /%3E%3Ccircle cx='45' cy='65' r='3.5' /%3E%3Ccircle cx='80' cy='65' r='2.5' /%3E%3Ccircle cx='100' cy='45' r='2.5' /%3E%3Ccircle cx='40' cy='95' r='3' /%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(180deg, #0a1b38 0%, #050e1f 40%, #020617 100%);
+
+  background-size: 120px 120px, 100% 100%;
+  background-attachment: fixed;
+}
+/* ==============================================
+   HEADER & NAVIGATION
+   ============================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--clr-surface, #ffffff);
+  border-bottom: 1px solid var(--clr-border, #e2e8f0);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 72rem;
+  margin-inline: auto;
+  position: relative;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--clr-heading, #0f172a);
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+/* --- Mobile Hamburger Button --- */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-heading, #0f172a);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* --- Mobile Navigation Drawer (Default / Closed) --- */
+.primary-navigation {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--clr-surface, #ffffff);
+  border-bottom: 1px solid var(--clr-border, #e2e8f0);
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  
+  /* Hidden state */
+  display: none;
+  box-sizing: border-box;
+}
+
+/* Opened State toggled via JS */
+.primary-navigation.is-active {
+  display: block;
+}
+
+.primary-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: var(--clr-heading, #0f172a);
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: color 0.2s ease;
+}
+
+.primary-navigation a:hover {
+  color: var(--clr-accent, #2563eb);
+}
+
+/* Hamburger 'X' animation when open */
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==============================================
+   DESKTOP VIEWPORT (min-width: 768px)
+   ============================================== */
+@media (min-width: 768px) {
+  /* Hide the hamburger button on desktop */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Reset navigation drawer back into the header flow */
+  .primary-navigation {
+    position: static;
+    display: block;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    margin-left: auto; /* Pushes the navigation links to the far right */
+  }
+
+  /* If you prefer links centered instead of to the right, swap margin-left: auto with:
+     margin-inline: auto;
+  */
+
+  .primary-navigation ul {
+    flex-direction: row;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .primary-navigation a {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==============================================
    SECTION HEADERS & CONTAINERS
    ============================================== */
 .container {
@@ -9,6 +177,14 @@
 .gallery-section,
 .pricing-section {
   padding-block: 5rem;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .section-header {
