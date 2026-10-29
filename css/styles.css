@@ -152,37 +152,40 @@
 }
 
 /* ==============================================
-   PRICING 3D FLIP CARDS
+   PRICING 3D HOVER & FLIP CARDS
    ============================================== */
 .pricing-matrix {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 2rem;
+  /* Auto-fit columns with 20rem minimum; clean row and column separation */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 2.5rem;
   align-items: stretch;
+  margin-top: 2rem;
 }
 
-/* Card Container & Perspective */
+/* 1. Parent card container MUST have a fixed height so the absolute faces don't collapse */
 .flip-card {
-  perspective: 1000px;
-  min-height: 24rem;
+  perspective: 1200px;
+  height: 28rem; /* Concrete height anchors the grid row so cards cannot overlap */
+  background: transparent;
 }
 
+/* 2. Inner wrapper handles both the slight lift and 3D rotation */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: left;
-  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
   transform-style: preserve-3d;
-  border-radius: 0.875rem;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+  border-radius: 1rem;
 }
 
-/* Lift on hover, then spin on active interaction */
+/* 3. Hover state: elevates slightly first, then executes the smooth Y-flip */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: translateY(-6px) rotateY(180deg);
 }
 
-/* Base Card Face */
+/* 4. Front & Back faces locked strictly to parent boundaries */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -191,85 +194,34 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 0.875rem;
-  padding: 2rem;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem; /* Balanced horizontal padding gives the button breathing room */
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  align-items: stretch; /* Forces full-width child elements to center and span symmetrically */
+  overflow: hidden;
+  box-sizing: border-box;
 }
-
-/* Front Face */
+/* Front Face Styling */
 .flip-card-front {
   background: var(--clr-surface, #ffffff);
   border: 1px solid var(--clr-border, #e2e8f0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transform: rotateY(0deg);
 }
 
 .flip-card.featured .flip-card-front {
-  border-color: var(--clr-accent, #3b82f6);
-  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+  border: 2px solid var(--clr-accent, #2563eb);
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
 }
 
-.recommended-badge {
-  align-self: flex-start;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-  background: var(--clr-accent, #3b82f6);
-  padding: 0.25rem 0.625rem;
-  border-radius: 9999px;
-  margin-bottom: 0.75rem;
-}
-
-.tier-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--clr-body-muted, #64748b);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.tier-name {
-  font-size: 1.375rem;
-  font-weight: 800;
-  color: var(--clr-heading, #0f172a);
-  margin-block: 0.25rem 0.75rem;
-}
-
-.tier-cost {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--clr-heading, #0f172a);
-  margin-bottom: 0.75rem;
-}
-
-.tier-cost .currency {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--clr-body-muted, #64748b);
-}
-
-.tier-summary {
-  font-size: 0.9375rem;
-  color: var(--clr-body-muted, #64748b);
-  line-height: 1.5;
-  flex-grow: 1;
-}
-
-.flip-hint {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--clr-accent, #3b82f6);
-  margin-top: 1rem;
-}
-
-/* Back Face */
+/* Back Face Styling */
 .flip-card-back {
   background: #0f172a;
   color: #f8fafc;
-  transform: rotateY(180deg);
   border: 1px solid #1e293b;
+  transform: rotateY(180deg);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.25);
 }
 
 .back-title {
@@ -306,7 +258,7 @@
 
 .btn-block {
   display: block;
-  width: 100%;
+  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
   padding: 0.75rem 1rem;
@@ -316,12 +268,136 @@
   background: var(--clr-accent, #3b82f6);
   color: #ffffff;
   transition: background 0.2s ease;
+  margin-top: auto; /* keeps it pinned neatly to the bottom of the card */
 }
 
 .btn-block:hover {
   background: #2563eb;
 }
+/* ==============================================
+   CLOSING CTA SECTION
+   ============================================== */
+.cta-section {
+  padding-block: 5rem 6rem;
+  background-color: var(--clr-surface, #ffffff);
+  border-top: 1px solid var(--clr-border, #e2e8f0);
+}
 
+.cta-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.cta-title {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--clr-heading, #0f172a);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.cta-lead {
+  font-size: 1.125rem;
+  color: var(--clr-body-muted, #64748b);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Button Row - Side-by-side on desktop, stacked on mobile */
+.cta-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Secondary Button Styling */
+.btn-secondary {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ==============================================
+   SITE FOOTER
+   ============================================== */
+.site-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding-block: 2rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.875rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .footer-container {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.footer-admin .admin-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  transition: color 0.2s ease;
+}
+
+.footer-admin .admin-link:hover {
+  color: #cbd5e1;
+  text-decoration: underline;
+}
+
+/* Mobile Stretch for CTA Buttons */
+@media (max-width: 480px) {
+  .cta-action-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}
 /* Mobile/Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   .flip-card-inner {

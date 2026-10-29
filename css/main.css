@@ -34,6 +34,42 @@
   height: 24px;
 }
 
+/*Instagram CTA styling*/
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 9999px; /* Pill shape */
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(220, 39, 67, 0.35);
+}
+
+.btn-instagram:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(220, 39, 67, 0.2);
+}
+
+.instagram-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
 /*Stats Styling*/
 .metrics-section {
   padding: 2.5rem 1rem;
