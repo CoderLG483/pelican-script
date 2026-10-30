@@ -9,47 +9,23 @@
         <!--Brand icon-->
         <link rel="icon" type="image/png" href="icons/internet.png">
 
+        <!-- Google Fonts Preconnect -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
+        <!-- Google Fonts API v2 -->
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
         <!--Styling Architecture-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/token.css">
     </head>
 
-<!--Navigation Landmark-->
-<header class="site-header" id="top">
-    <div class="header-container">
-        <a href="#top" class="brand-link" aria-label="Pelican Script Home">
-            <img src="img/logo.png" alt="Pelican Script Logo" class="brand-logo" width="128" height="128">
-            <span class="brand-name">Pelican Script</span>
-        </a>
-    
-    <!--Mobile Navigation-->
-    <button
-        type="button"
-        class="nav-toggle"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-        aria-label="Toggle navigation menu">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-    </button>
-
-    <!--Hidden Navigation Links-->
-    <nav class="primary-navigation" id="primary-navigation" aria-label="Main Navigation">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    </div>
-</header>
+<site-header></site-header>
 
 <!--Main Content-->
 <main id="main-content">
@@ -128,7 +104,7 @@
     <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
         <div class="container">
             <header class="section-header">
-                <p class="section-tag">Case Studies</p>
+                <h2 class="section-tag">Case Studies</h2>
                 <h2 id="gallery-heading" class="section-title">Engineered for Real-World Impact</h2>
                 <p class="section-subtitle">High-performance web architecture crafted for local Caribbean enterprises—zero bloated templates, sub-second load times.</p>
             </header>
@@ -220,7 +196,7 @@
     <section id="pricing" class="pricing-section" aria-labelledby="pricing-heading">
         <div class="container">
             <header class="section-header">
-                <p class="section-tag">Investment Menu</p>
+                <h2 class="section-tag">Investment Menu</h2>
                 <h2 id="pricing-heading" class="section-title">Transparent, Fixed-Scope Tiers</h2>
                 <p class="section-subtitle">Predictable project deliverables with zero hidden hourly fees. Structured on a secure 50/50 milestone schedule.</p>
             </header>
@@ -235,7 +211,7 @@
                         <h3 class="tier-name">Digital Business Card</h3>
                         <p class="tier-cost">$45k – $65k <span class="currency">JMD</span></p>
                         <p class="tier-summary">Single-page responsive digital storefront engineered for WhatsApp conversion.</p>
-                        <div class="flip-hint">Hover / Tap to inspect specs &rarr;</div>
+                        <div class="flip-hint">Hover to inspect specs &rarr;</div>
                     </div>
                     <!-- Card Back -->
                     <div class="flip-card-back">
@@ -261,7 +237,7 @@
                         <h3 class="tier-name">Standard SME Hub</h3>
                         <p class="tier-cost">$80k – $130k <span class="currency">JMD</span></p>
                         <p class="tier-summary">Multi-page business foundation with portfolio filtering and local search dominance.</p>
-                        <div class="flip-hint">Hover / Tap to inspect specs &rarr;</div>
+                        <div class="flip-hint">Hover to inspect specs &rarr;</div>
                     </div>
                 <!-- Card Back -->
                 <div class="flip-card-back">
@@ -286,7 +262,7 @@
                         <h3 class="tier-name">Custom Business Engine</h3>
                         <p class="tier-cost">$160k – $250k+ <span class="currency">JMD</span></p>
                         <p class="tier-summary">Dynamic tooling, bespoke estimators, and civic web portals engineered for scale.</p>
-                        <div class="flip-hint">Hover / Tap to inspect specs &rarr;</div>
+                        <div class="flip-hint">Hover to inspect specs &rarr;</div>
                     </div>
                 <!-- Card Back -->
                     <div class="flip-card-back">
@@ -312,7 +288,7 @@
         <div class="container cta-container">
             <div class="cta-content">
                 <h2 id="cta-heading" class="cta-title">Stop losing clients to three-second load screens.</h2>
-                <p class="cta-lead">Your website should be an automated sales asset, not a digital brochure nobody waits around to see. Let’s engineer something fast, focused, and built to convert.</p>
+                <p class="cta-lead">Your website should be an automated sales asset, not a digital brochure nobody waits around to see. Let’s engineer something fast, focused, and built to convert!</p>
                 <div class="cta-action-row">
                     <!-- Direct WhatsApp Pre-Filled Lead Link -->
                     <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20a%20website%20for%20my%20business"
@@ -347,21 +323,8 @@
             </div>
         </div>
     </section>
-
-    <!-- ==============================================
-     GLOBAL FOOTER
-     ============================================== -->
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <div class="footer-meta">
-                <span class="copyright-mark">© <span id="current-year">2026</span> Pelican Script. All rights reserved.</span>
-            </div>
-
-            <div class="footer-admin">
-                <a href="admin/login.html" class="admin-link">Admin Login</a>
-            </div>
-        </div>
-    </footer>
+    <site-footer></site-footer>
+    <script src="scripts/components.js" defer></script>
     <script src="scripts/metrics.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </main>

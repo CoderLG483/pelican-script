@@ -16,6 +16,26 @@ body {
   background-size: 120px 120px, 100% 100%;
   background-attachment: fixed;
 }
+
+/* Ensure the font names match Google's exact declaration */
+h1, h2, h3, .brand-name, .section-tag {
+  font-family: 'Silkscreen', 'Press Start 2P', monospace;
+  /* Optional: pixel fonts usually render sharper without browser smoothing */
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+.tier-label {
+  font-family: 'Silkscreen', 'Press Start 2P', monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 /* ==============================================
    HEADER & NAVIGATION
    ============================================== */
@@ -84,7 +104,10 @@ body {
   border-bottom: 1px solid var(--clr-border, #e2e8f0);
   padding: 1.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-  
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+
   /* Hidden state */
   display: none;
   box-sizing: border-box;
@@ -196,27 +219,28 @@ body {
 
 .section-tag {
   display: inline-block;
-  font-size: 0.8125rem;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--clr-accent, #3b82f6);
+  color: var(--clr-accent, #00f7ff);
   margin-bottom: 0.5rem;
 }
 
 .section-title {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
-  color: var(--clr-heading, #0f172a);
+  color: var(--clr-heading, #fff);
   line-height: 1.2;
   margin-bottom: 0.75rem;
 }
 
 .section-subtitle {
   font-size: 1rem;
-  color: var(--clr-body-muted, #64748b);
+  color: var(--clr-body-muted, #fff);
   line-height: 1.6;
 }
+
 
 /* ==============================================
    GALLERY SHOWCASE GRID
@@ -348,7 +372,6 @@ body {
 
 /* 2. Inner wrapper handles both the slight lift and 3D rotation */
 .flip-card-inner {
-  position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -375,8 +398,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch; /* Forces full-width child elements to center and span symmetrically */
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 /* Front Face Styling */
 .flip-card-front {
@@ -386,11 +412,34 @@ body {
   transform: rotateY(0deg);
   color: #0f172a;
   text-align: center;
+  position: relative;
 }
 
-.flip-card.featured .flip-card-front {
-  border: 2px solid var(--clr-accent, #2563eb);
+.flip-card.featured .flip-card-front, .flip-card.featured .flip-card-back {
+  border: 4px solid var(--clr-accent, #d9ff00);
   box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #0070f3, #00d4ff);
+  color: #030712;
+  font-family: 'Silkscreen', monospace;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.6), 0 2px 6px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.recommended-badge strong {
+  font-weight: 700;
 }
 
 .flip-hint {
@@ -465,10 +514,41 @@ body {
 /* ==============================================
    CLOSING CTA SECTION
    ============================================== */
-.cta-section {
-  padding-block: 5rem 6rem;
+/*.cta-section {
+  padding-block: 1rem 6rem;
   background-color: var(--clr-surface, #ffffff);
   border-top: 1px solid var(--clr-border, #e2e8f0);
+}*/
+
+.cta-section, .metrics-section {
+  background-color: rgba(5, 11, 20, 0.7); /* Deep dark blue-black with 70% opacity */
+  backdrop-filter: blur(8px);             /* Blurs the circuits slightly underneath */
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding-block: 5rem 1.5rem;
+}
+
+.cta-section h2 {
+  color: #f8fafc;
+}
+
+.cta-section p {
+  color: #94a3b8;
+}*/
+
+/* Replace .cta-section with your actual class name */
+.cta-section {
+  background: transparent; /* Lets the body circuit background show right through */
+  padding: 5rem 1.5rem;
+}
+
+.cta-section h2 {
+  color: #f8fafc; /* Crisp white for the pixel heading */
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.2); /* Optional subtle cyan glow */
+}
+
+.cta-section p {
+  color: #94a3b8; /* Muted tech grey/cyan for high-legibility body text */
 }
 
 .cta-container {

@@ -76,7 +76,7 @@
   background-color: #f8fafc
 }
 
-.stats-container {
+/*.stats-container {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -114,7 +114,71 @@
   font-size: 0.95rem;
   color: #475569;
   font-weight: 500;
+}*/
+
+/* ==============================================
+   METRICS SECTION (TRANSLUCENT CYBER PLATE)
+   ============================================== */
+.metrics-section {
+  width: 100%;
+  background-color: rgba(5, 11, 20, 0.7); /* Translucent obsidian plate */
+  backdrop-filter: blur(8px);             /* Lets background circuits softly blur */
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
 }
+
+.stats-container {
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+/* Reset <ul> defaults & distribute items across */
+.stats-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* Individual Stat Column */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+/* Pixelify Sans Numeric Value with Cyan Glow */
+.stat-value {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #38bdf8; /* Electric cyan */
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    0 0 10px rgba(56, 189, 248, 0.5),
+    0 0 24px rgba(56, 189, 248, 0.25);
+}
+
+/* Subtitle Label */
+.stat-label {
+  font-family: 'Silkscreen', monospace;
+  font-size: 1rem;            /* Bumped up from 0.85rem */
+  color: #cbd5e1;            /* Slightly brighter off-white for sharper contrast */
+  letter-spacing: 0.1em;      /* Gives pixel/mono fonts clean breathing room */
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
 /*Tablet/Desktop expanmsion*/
 @media (min-width: 640px) {
   .stats-list {
