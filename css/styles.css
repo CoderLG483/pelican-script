@@ -384,11 +384,23 @@ body {
   border: 1px solid var(--clr-border, #e2e8f0);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   transform: rotateY(0deg);
+  color: #0f172a;
+  text-align: center;
 }
 
 .flip-card.featured .flip-card-front {
   border: 2px solid var(--clr-accent, #2563eb);
   box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: #0f172a;
+  margin-top: auto; /* Pushes the hint to the bottom of the card */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
 }
 
 /* Back Face Styling */
