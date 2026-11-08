@@ -26,7 +26,7 @@ class SiteHeader extends HTMLElement {
 
             <nav class="primary-navigation" id="primary-navigation" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>

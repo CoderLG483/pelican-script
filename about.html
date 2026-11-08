@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the Operator | Pelican Script</title>
+  <meta name="description" content="Meet Lincoln Green—computer science student at UWI Mona and founder of Pelican Script. Engineering bespoke, ultra-fast web systems for Caribbean SMEs.">
+  
+  <!-- Brand icon -->
+  <link rel="icon" type="image/png" href="icons/internet.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/token.css">
+
+<style>
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Outer Centered Wrapper */
+    .about-wrapper {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem 1.5rem;
+      box-sizing: border-box;
+    }
+
+    /* Page Header */
+    .about-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      background: rgba(0, 243, 255, 0.05);
+      color: #00f3ff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .about-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Two-Column Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 340px 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* Left Column: Operator Frame */
+    .operator-frame {
+      background: rgba(14, 22, 34, 0.85);
+      border: 1px solid rgba(0, 243, 255, 0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.08);
+      backdrop-filter: blur(8px);
+      box-sizing: border-box;
+    }
+
+    .operator-img-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px dashed rgba(0, 243, 255, 0.4);
+      background: #080d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .operator-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #00f3ff;
+      text-align: center;
+      padding: 1rem;
+      line-height: 1.5;
+    }
+
+    .operator-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #00f3ff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .operator-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .operator-bio {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin: 0 0 1.25rem 0;
+    }
+
+    .operator-divider {
+      border: 0;
+      border-top: 1px solid rgba(31, 46, 66, 0.8);
+      margin: 1.25rem 0;
+    }
+
+    .rig-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #64748b;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .hobby-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .hobby-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: #080d14;
+      border: 1px solid #1f2e42;
+      color: #cbd5e1;
+    }
+
+    .hobby-chip .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* Right Column: Story & Narrative */
+    .story-section {
+      margin-bottom: 2.75rem;
+    }
+
+    .story-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #00f3ff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .story-heading {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0.4rem 0 1rem 0;
+    }
+
+    .story-body {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      line-height: 1.75;
+      margin: 0 0 1rem 0;
+    }
+
+    /* Comparison Cards */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .comparison-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .compare-box {
+      padding: 1.25rem;
+      border-radius: 8px;
+      background: rgba(14, 22, 34, 0.7);
+      font-family: 'JetBrains Mono', monospace;
+      box-sizing: border-box;
+    }
+
+    .compare-social {
+      border: 1px solid rgba(255, 0, 127, 0.35);
+    }
+
+    .compare-site {
+      border: 1px solid rgba(0, 243, 255, 0.35);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+    }
+
+    .compare-title-social {
+      color: #ff007f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .compare-title-site {
+      color: #00f3ff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .compare-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .compare-list li {
+      margin-bottom: 0.65rem;
+    }
+
+    .compare-social .compare-list li {
+      color: #94a3b8;
+    }
+
+    .compare-site .compare-list li {
+      color: #e2e8f0;
+    }
+
+    /* Mantra Pill Section */
+    .mantra-block {
+      border-top: 1px solid rgba(31, 46, 66, 0.8);
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mantra-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(14, 22, 34, 0.95);
+      border: 1.5px solid #00ff66;
+      border-radius: 9999px;
+      padding: 0.7rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+      user-select: none;
+      min-height: 44px;
+      box-sizing: border-box;
+    }
+
+    .mantra-container:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 102, 0.4);
+      background: rgba(0, 255, 102, 0.08);
+    }
+
+    .mantra-jp {
+      color: #00ff66;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .mantra-en {
+      position: absolute;
+      left: 2.75rem;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateX(-5px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .mantra-container:hover .mantra-jp {
+      opacity: 0;
+      transform: translateX(5px);
+    }
+
+    .mantra-container:hover .mantra-en {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Bottom Conversion Area */
+    .about-cta-footer {
+      border-top: 1px solid rgba(31, 46, 66, 0.8);
+      padding-top: 3.5rem;
+      text-align: center;
+    }
+
+    .about-cta-footer h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .about-cta-footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin: 0 auto 2rem auto;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .cta-button-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body class="bg-[#080d14] text-[#e2e8f0]">
+  <!-- Shared Component Header -->
+  <site-header></site-header>
+
+ <main id="main-content">
+  <div class="about-wrapper">
+    
+    <!-- Hero / Header -->
+    <header class="about-header">
+      <div class="about-badge">
+        <span class="w-2 h-2 rounded-full bg-[#00f3ff] animate-pulse"></span>
+        <span>SYSTEM_OPERATOR :: IDENTITY_NODE</span>
+      </div>
+      <h1 class="about-title">Behind the Terminal.</h1>
+      <p class="about-subtitle">
+        High-performance engineering, local Caribbean perspective, and a refusal to build slow, bloated websites.
+      </p>
+    </header>
+
+    <!-- Content Grid -->
+    <div class="about-grid">
+      
+      <!-- Left Column: Dossier Card -->
+      <aside class="operator-frame">
+        <div class="operator-img-wrapper">
+          <img src="img/mii.jpg" alt="Lincoln Green - Lead Architect" class="operator-photo">
+        </div>
+
+        <div class="operator-role">Lead Architect</div>
+        <h2 class="operator-name">Lincoln Green</h2>
+        <p class="operator-bio">
+          Computer Science major at UWI Mona. Systems builder, clean-code enthusiast, and founder of Pelican Script.
+        </p>
+
+        <hr class="operator-divider">
+
+        <div class="rig-label">OPERATIONAL RIG &amp; INTERESTS</div>
+        <div class="hobby-tags">
+          <span class="hobby-chip"><span class="dot" style="background: #00f3ff;"></span>Nintendo Switch</span>
+          <span class="hobby-chip"><span class="dot" style="background: #00ff66;"></span>PC Rig &amp; Gaming</span>
+          <span class="hobby-chip"><span class="dot" style="background: #ff007f;"></span>Japanese Studies</span>
+          <span class="hobby-chip"><span class="dot" style="background: #ffd700;"></span>Tech &amp; Reading</span>
+        </div>
+      </aside>
+
+      <!-- Right Column: Narrative & Comparison -->
+      <article>
+        
+        <!-- Story 01 -->
+        <section class="story-section">
+          <span class="story-tag">[ 01 // THE ORIGIN ]</span>
+          <h2 class="story-heading">Engineering from the ground up.</h2>
+          <p class="story-body">
+            Lincoln is a Computer Science student at UWI Mona, balancing the grind of algorithm lectures, late-night code reviews, and the realities of being a broke university student with an obsession for systems architecture. Rather than treating computing solely as academic theory, he set out to build fast, tactile software engineered for the open web.
+          </p>
+          <p class="story-body">
+            Surveying Jamaica and the wider Caribbean, he noticed a critical gap: hardworking small and medium enterprises (SMEs) running standout local operations, but handcuffed to sluggish, bloated page-builders or broken links that stall out on mobile data. He established <strong>Pelican Script</strong> to bring clean, hand-crafted code, transparent pricing, and sub-second performance to Caribbean business owners who need tools built to compete.
+          </p>
+        </section>
+
+        <!-- Story 02 -->
+        <section class="story-section">
+          <span class="story-tag">[ 02 // THE STRATEGY ]</span>
+          <h2 class="story-heading">Why Social Media isn't enough.</h2>
+          <p class="story-body">
+            Instagram and TikTok are great for attention, but they make terrible storefronts. Renting your entire business reputation on an algorithm leaves you vulnerable to disappearing DMs, zero Google search ranking, and lost leads.
+          </p>
+
+          <div class="comparison-grid">
+            <div class="compare-box compare-social">
+              <div class="compare-title-social">✕ RENTED LAND (SOCIAL MEDIA)</div>
+              <ul class="compare-list">
+                <li>• Inquiries buried under cluttered DMs</li>
+                <li>• Zero visibility on Google Search</li>
+                <li>• You don't own client data or platform</li>
+                <li>• No structured menus or rate transparency</li>
+              </ul>
+            </div>
+
+            <div class="compare-box compare-site">
+              <div class="compare-title-site">✓ OWNED ASSET (CUSTOM STOREFRONT)</div>
+              <ul class="compare-list">
+                <li>• Sub-second load times on mobile data</li>
+                <li>• Indexed directly on Google Search &amp; Maps</li>
+                <li>• 1-click WhatsApp routing with pre-filled leads</li>
+                <li>• 100% ownership of code, domain, and brand</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mantra Node -->
+        <section class="mantra-block">
+          <div class="rig-label">CORE OPERATIONAL MANTRA (HOVER TO TRANSLATE)</div>
+          <div class="mantra-container" title="Hover to translate">
+            <span class="dot" style="width: 8px; height: 8px; background: #00ff66; border-radius: 50%;"></span>
+            <span class="mantra-jp">「できることをやるだけ。」</span>
+            <span class="mantra-en">"Just do what you can."</span>
+          </div>
+        </section>
+
+      </article>
+
+    </div>
+
+    <!-- Closing CTA Footer -->
+    <footer class="about-cta-footer">
+      <h2>Let’s engineer something fast.</h2>
+      <p>Have questions about modernizing your web presence? Reach out directly via WhatsApp or connect on Instagram.</p>
+      
+      <div class="cta-button-row">
+        <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20a%20website%20for%20my%20business"
+           class="btn-whatsapp"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contact Pelican Script on WhatsApp">
+          <img src="icons/wa-white.png" alt="" class="whatsapp-icon" width="20" height="20">
+          <span class="btn-text">Free Consultation</span>
+        </a>
+
+        <a href="https://instagram.com/thepelicanscript"
+           class="btn-instagram"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Find Pelican Script on Instagram">
+          <img src="icons/ig-white.png" alt="" class="instagram-icon" width="20" height="20">
+          <span class="btn-text">Find us on Instagram</span>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+</main>
+
+  <!-- Shared Component Footer -->
+  <site-footer></site-footer>
+
+  <!-- Scripts -->
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
