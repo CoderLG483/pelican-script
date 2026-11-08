@@ -19,11 +19,71 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+        
         <!--Styling Architecture-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/token.css">
+
+        <style>
+            /* Spacing adjustments for the hero area */
+            .hero-section {
+                padding-top: 2rem !important;
+            }
+
+            .hero-header {
+                width: 100%;
+                text-align: center;
+                margin: 1.5rem auto 2.5rem auto;
+                padding: 0;
+                display: block;
+            }
+
+            .hero-badge {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.35rem 0.85rem;
+                border-radius: 9999px;
+                border: 1px solid rgba(0, 243, 255, 0.3);
+                background: rgba(0, 243, 255, 0.05);
+                color: #00f3ff;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.75rem;
+                margin: 0 auto 1.5rem auto;
+                float: none !important;
+                position: static !important;
+                letter-spacing: 0.05em;
+            }
+
+            /* Remove upper padding at the CTA section */
+            #contact-cta.cta-section {
+                padding-top: 0 !important;
+                margin-top: 1.5rem;
+            }
+
+            @media (max-width: 640px) {
+                .hero-section {
+                    padding-top: 1rem !important;
+                }
+                .hero-header {
+                    margin-top: 0.75rem;
+                    margin-bottom: 1.75rem;
+                }
+                .hero-badge {
+                    font-size: 0.65rem;
+                    padding: 0.25rem 0.65rem;
+                    margin-bottom: 1rem;
+                }
+                #contact-cta.cta-section {
+                    padding-top: 0 !important;
+                    margin-top: 0.75rem;
+                }
+            }
+        </style>
     </head>
+    <body>
 
 <site-header></site-header>
 
@@ -31,8 +91,18 @@
 <main id="main-content">
     <section class="hero-section" id="about" aria-labelledby="hero-title">
         <div class="hero-container">
-            <h1 class="hero-title" id="hero-title">Fast, High-Performance Websites for Growing Caribbean Businesses</h1>
-            <p class="hero-subtitle">Carve out your own online presence with a custom website! We're just doing what we can, to help you do more!</p>
+
+            <!-- Hero Section Mini-Header HUD Badge -->
+            <header class="hero-header">
+                <div style="text-align: center; width: 100%;">
+                    <div class="hero-badge">
+                        <span style="display: inline-block; width: 6px; height: 6px; background-color: #00f3ff; border-radius: 50%; box-shadow: 0 0 8px #00f3ff;"></span>
+                        <span>SYSTEM_CORE :: INITIALIZE_TRANSMISSION</span>
+                    </div>
+                </div>
+                <h1 class="hero-title" id="hero-title">Fast, High-Performance Websites for Growing Caribbean Businesses</h1>
+                <p class="hero-subtitle">Carve out your own online presence with a custom website! We're just doing what we can, to help you do more!</p>
+            </header>
 
             <!--First CTA-->
             <div class="hero-actions">
@@ -316,8 +386,12 @@
             </div>
         </div>
     </section>
-    <site-footer></site-footer>
-    <script src="scripts/components.js" defer></script>
-    <script src="scripts/metrics.js" defer></script>
-    <script src="scripts/main.js" defer></script>
 </main>
+
+<site-footer></site-footer>
+
+<script src="scripts/components.js" defer></script>
+<script src="scripts/metrics.js" defer></script>
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
