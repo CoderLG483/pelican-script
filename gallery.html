@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Systems Showcase | Pelican Script</title>
+  <meta name="description" content="Explore live web architectures, landing portals, and bespoke web apps engineered by Pelican Script for Jamaican SMEs.">
+  
+  <!-- Brand icon -->
+  <link rel="icon" type="image/png" href="icons/internet.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/token.css">
+
+  <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: #080d14;
+      color: #cbd5e1;
+    }
+
+    /* Outer Centered Wrapper */
+    .gallery-wrapper {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem 1.5rem;
+      box-sizing: border-box;
+    }
+
+    /* Page Header */
+    .gallery-header {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .gallery-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .gallery-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Project Grid Layout */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    /* Cyber Card Container */
+    .showcase-card {
+      background: rgba(14, 22, 34, 0.85);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.04);
+      backdrop-filter: blur(8px);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                  border-color 0.35s ease, 
+                  box-shadow 0.35s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 243, 255, 0.55);
+      box-shadow: 0 12px 35px rgba(0, 243, 255, 0.15);
+    }
+
+    /* Card Top Bar (Mac/Terminal Dots) */
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: rgba(8, 13, 20, 0.8);
+      border-bottom: 1px solid rgba(31, 46, 66, 0.8);
+    }
+
+    .topbar-dots {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .dot-pill {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .topbar-meta {
+      font-size: 0.68rem;
+      color: #64748b;
+      letter-spacing: 0.05em;
+    }
+
+    /* 16:9 Image / Screenshot Container */
+    .screenshot-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #080d14;
+      border-bottom: 1px solid rgba(31, 46, 66, 0.8);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screenshot-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .showcase-card:hover .screenshot-img {
+      transform: scale(1.04);
+    }
+
+    /* Placeholder Badge when no image */
+    .screenshot-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #00f3ff;
+      border: 1px dashed rgba(0, 243, 255, 0.3);
+      border-radius: 8px;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      background: rgba(0, 243, 255, 0.02);
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    /* Card Content Area */
+    .card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .project-category {
+      font-size: 0.7rem;
+      color: #00ff66;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .project-description {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin: 0 0 1.25rem 0;
+      flex-grow: 1;
+    }
+
+    /* Stack Badges */
+    .stack-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-chip {
+      font-size: 0.68rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      background: #080d14;
+      border: 1px solid #1f2e42;
+      color: #cbd5e1;
+    }
+
+    /* Action Buttons Area */
+    .card-actions {
+      display: flex;
+      gap: 0.85rem;
+      border-top: 1px solid rgba(31, 46, 66, 0.6);
+      padding-top: 1.25rem;
+    }
+
+    .btn-action-primary {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid #00f3ff;
+      color: #00f3ff;
+      background: transparent;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-action-primary:hover {
+      background: #00f3ff;
+      color: #080d14;
+      box-shadow: 0 0 16px rgba(0, 243, 255, 0.4);
+    }
+
+    /* Disabled/Pending Stage for when site isn't live yet */
+    .btn-action-pending {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid #1f2e42;
+      color: #64748b;
+      background: #080d14;
+      cursor: not-allowed;
+      user-select: none;
+    }
+
+    /* Bottom Conversion Area */
+    .gallery-cta-footer {
+      border-top: 1px solid rgba(31, 46, 66, 0.8);
+      margin-top: 5rem;
+      padding-top: 3.5rem;
+      text-align: center;
+    }
+
+    .gallery-cta-footer h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .gallery-cta-footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin: 0 auto 2rem auto;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    .cta-button-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Shared Component Header -->
+  <site-header></site-header>
+
+  <main id="main-content">
+    <div class="gallery-wrapper">
+      
+      <!-- Clean Hero (Badge Removed & Clearance Added) -->
+      <header class="gallery-header">
+        <h1 class="gallery-title">Deployed Systems.</h1>
+        <p class="gallery-subtitle">
+          Engineered for Caribbean bandwidth. Clean code, sub-second latency, and bespoke digital experiences.
+        </p>
+      </header>
+
+      <!-- Main Showcase Grid -->
+      <div class="showcase-grid">
+
+        <!-- ==============================================
+             ACTIVE SLOT 01: CAMPUS RUSH PORTAL
+             ============================================== -->
+        <article class="showcase-card">
+          <div class="card-topbar">
+            <div class="topbar-dots">
+              <span class="dot-pill" style="background: #ff5f56;"></span>
+              <span class="dot-pill" style="background: #ffbd2e;"></span>
+              <span class="dot-pill" style="background: #27c93f;"></span>
+            </div>
+            <span class="topbar-meta">HOST :: UMCS_NODE</span>
+          </div>
+
+          <!-- Screenshot Slot -->
+          <div class="screenshot-frame">
+            <!-- When screenshot is captured, uncomment below:
+            <img src="img/campus-rush.jpg" alt="Campus Rush Web Framework" class="screenshot-img"> -->
+            <div class="screenshot-placeholder">
+              <span style="font-size: 1.4rem;">🎮</span>
+              <span>[ SCREENSHOT_FRAME :: 16:9 ]</span>
+              <span style="font-size: 0.65rem; color: #64748b;">img/campus-rush.jpg</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="card-tag-row">
+              <span class="project-category">Interactive Showcase</span>
+              <span style="font-size: 0.7rem; color: #64748b;">2026</span>
+            </div>
+            <h2 class="project-title">Campus Rush Portal</h2>
+            <p class="project-description">
+              Mobile-responsive web portal and game showcase engine designed for an endless runner title at UWI Mona. Features fluid hamburger navigation, dynamic character documentation, and zero-bloat vanilla scripting.
+            </p>
+
+            <div class="stack-badges">
+              <span class="badge-chip">HTML5</span>
+              <span class="badge-chip">Modular CSS</span>
+              <span class="badge-chip">Vanilla JS</span>
+              <span class="badge-chip">Mobile Viewport</span>
+            </div>
+
+            <div class="card-actions">
+              <span class="btn-action-pending">Staging Preview</span>
+              <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20curious%20about%20the%20Campus%20Rush%20architecture" 
+                 target="_blank" 
+                 class="btn-action-primary"
+                 rel="noopener noreferrer">
+                Inspect Scope &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==============================================
+             ACTIVE SLOT 02: BLUE MOUNTAIN HONEY CO. (SME SHOWCASE)
+             ============================================== -->
+        <article class="showcase-card">
+          <div class="card-topbar">
+            <div class="topbar-dots">
+              <span class="dot-pill" style="background: #ff5f56;"></span>
+              <span class="dot-pill" style="background: #ffbd2e;"></span>
+              <span class="dot-pill" style="background: #27c93f;"></span>
+            </div>
+            <span class="topbar-meta">CLIENT :: LOCAL_SME_DEMO</span>
+          </div>
+
+          <!-- Screenshot Slot -->
+          <div class="screenshot-frame">
+            <!-- When screenshot is captured, uncomment below:
+            <img src="img/honey-co.jpg" alt="Blue Mountain Honey Co. Storefront" class="screenshot-img"> -->
+            <div class="screenshot-placeholder">
+              <span style="font-size: 1.4rem;">🍯</span>
+              <span>[ SCREENSHOT_FRAME :: 16:9 ]</span>
+              <span style="font-size: 0.65rem; color: #64748b;">img/honey-co.jpg</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="card-tag-row">
+              <span class="project-category">Digital Storefront // Tier 1</span>
+              <span style="font-size: 0.7rem; color: #64748b;">Demo Hub</span>
+            </div>
+            <h2 class="project-title">Blue Mountain Honey Co.</h2>
+            <p class="project-description">
+              Lightweight artisanal product showcase engineered for instant mobile ordering. Eliminates sluggish e-commerce overhead with automated WhatsApp order links and clear batch pricing.
+            </p>
+
+            <div class="stack-badges">
+              <span class="badge-chip">High-Performance Static</span>
+              <span class="badge-chip">WhatsApp Cart Dispatch</span>
+              <span class="badge-chip">CSS Grid</span>
+              <span class="badge-chip">Zero Bloat</span>
+            </div>
+
+            <div class="card-actions">
+              <span class="btn-action-pending">Concept Staged</span>
+              <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'd%20like%20a%20storefront%20like%20the%20Honey%20Co.%20demo" 
+                 target="_blank" 
+                 class="btn-action-primary"
+                 rel="noopener noreferrer">
+                Inspect Scope &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==============================================
+             FUTURE CLIENT SLOTS (COMMENTED OUT UNTIL READY)
+             Uncomment and fill with production details as client contracts close.
+             ============================================== -->
+
+        <!-- 
+        <article class="showcase-card">
+          <div class="card-topbar">
+            <div class="topbar-dots">
+              <span class="dot-pill" style="background: #ff5f56;"></span>
+              <span class="dot-pill" style="background: #ffbd2e;"></span>
+              <span class="dot-pill" style="background: #27c93f;"></span>
+            </div>
+            <span class="topbar-meta">CLIENT :: CONTRACT_RESERVED</span>
+          </div>
+
+          <div class="screenshot-frame">
+            <div class="screenshot-placeholder">
+              <span style="font-size: 1.4rem;">⚡</span>
+              <span>[ SCREENSHOT_FRAME :: 16:9 ]</span>
+              <span style="font-size: 0.65rem; color: #64748b;">img/client-03.jpg</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="card-tag-row">
+              <span class="project-category">Multi-Page SME Hub // Tier 2</span>
+              <span style="font-size: 0.7rem; color: #64748b;">Upcoming</span>
+            </div>
+            <h2 class="project-title">Client Project 03</h2>
+            <p class="project-description">
+              Bespoke multi-view business platform featuring localized SEO metadata, structured category routing, and instant lead triage.
+            </p>
+
+            <div class="stack-badges">
+              <span class="badge-chip">Multi-Route</span>
+              <span class="badge-chip">SEO Integration</span>
+              <span class="badge-chip">Performance SLA</span>
+            </div>
+
+            <div class="card-actions">
+              <a href="#" target="_blank" class="btn-action-primary">View Deployment &rarr;</a>
+            </div>
+          </div>
+        </article>
+        -->
+
+        <!-- 
+        <article class="showcase-card">
+          <div class="card-topbar">
+            <div class="topbar-dots">
+              <span class="dot-pill" style="background: #ff5f56;"></span>
+              <span class="dot-pill" style="background: #ffbd2e;"></span>
+              <span class="dot-pill" style="background: #27c93f;"></span>
+            </div>
+            <span class="topbar-meta">CLIENT :: CONTRACT_RESERVED</span>
+          </div>
+
+          <div class="screenshot-frame">
+            <div class="screenshot-placeholder">
+              <span style="font-size: 1.4rem;">🛠️</span>
+              <span>[ SCREENSHOT_FRAME :: 16:9 ]</span>
+              <span style="font-size: 0.65rem; color: #64748b;">img/client-04.jpg</span>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div class="card-tag-row">
+              <span class="project-category">Custom Business Tool // Tier 3</span>
+              <span style="font-size: 0.7rem; color: #64748b;">Upcoming</span>
+            </div>
+            <h2 class="project-title">Client Project 04</h2>
+            <p class="project-description">
+              Dynamic client tool and estimation portal engineered for automated business calculations, lead intake, and custom workflows.
+            </p>
+
+            <div class="stack-badges">
+              <span class="badge-chip">Dynamic Logic</span>
+              <span class="badge-chip">Edge Architecture</span>
+              <span class="badge-chip">Lead Generation</span>
+            </div>
+
+            <div class="card-actions">
+              <a href="#" target="_blank" class="btn-action-primary">View Deployment &rarr;</a>
+            </div>
+          </div>
+        </article>
+        -->
+
+      </div><!-- .showcase-grid -->
+
+      <!-- Bottom Conversion Section -->
+      <footer class="gallery-cta-footer">
+        <h2>Ready to build your storefront?</h2>
+        <p>
+          Whether you need a high-impact single-page card or a multi-view business hub, let's engineer something fast.
+        </p>
+        
+        <div class="cta-button-row">
+          <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20a%20website%20for%20my%20business"
+             class="btn-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Contact Pelican Script on WhatsApp">
+            <img src="icons/wa-white.png" alt="" class="whatsapp-icon" width="20" height="20">
+            <span class="btn-text">Free Consultation</span>
+          </a>
+
+          <a href="https://instagram.com/thepelicanscript"
+             class="btn-instagram"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Find Pelican Script on Instagram">
+            <img src="icons/ig-white.png" alt="" class="instagram-icon" width="20" height="20">
+            <span class="btn-text">Find us on Instagram</span>
+          </a>
+        </div>
+      </footer>
+
+    </div><!-- .gallery-wrapper -->
+  </main>
+
+  <!-- Shared Component Footer -->
+  <site-footer></site-footer>
+
+  <!-- Scripts -->
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
