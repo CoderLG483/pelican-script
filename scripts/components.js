@@ -9,8 +9,8 @@ class SiteHeader extends HTMLElement {
         <!--Navigation Landmark-->
         <header class="site-header" id="top">
             <div class="header-container">
-                <a href="#top" class="brand-link" aria-label="Pelican Script Home">
-                    <img src="img/logo.png" alt="Pelican Script Logo" class="brand-logo" width="128" height="128">
+                <a href="index.html" class="brand-link" aria-label="Pelican Script Home">
+                    <img src="img/logo.png" alt="Pelican Script Logo" class="brand-logo" width="256" height="256">
                     <span class="brand-name">Pelican Script</span>
                 </a>
                 <button
@@ -28,7 +28,7 @@ class SiteHeader extends HTMLElement {
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -69,10 +69,6 @@ class SiteFooter extends HTMLElement {
         <div class="container footer-container">
             <div class="footer-meta">
                 <span class="copyright-mark">© <span id="current-year">2026</span> Pelican Script. All rights reserved.</span>
-            </div>
-
-            <div class="footer-admin">
-                <a href="admin/login.html" class="admin-link">Admin Login</a>
             </div>
         </div>
     </footer>

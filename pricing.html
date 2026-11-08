@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing &amp; Engineering Specifications | Pelican Script</title>
+  <meta name="description" content="Transparent engineering rates, deliverables, and service protocols for Pelican Script web solutions." />
+  
+  <!-- Web Component Scripts -->
+  <script src="scripts/components.js" defer></script>
+
+  <!-- Main Styling -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgDeep: '#080d14',
+            surfaceDark: '#0e1622',
+            surfaceLighter: '#142030',
+            gridLine: 'rgba(30, 48, 77, 0.45)',
+            cyanNeon: '#00f3ff',
+            cyanMuted: '#00b8c4',
+            greenTerminal: '#00ff66',
+            amberAlert: '#ffb700',
+            textMain: '#e6edf3',
+            textMuted: '#8b949e',
+            borderSubtle: '#1f2e42'
+          },
+          fontFamily: {
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+<style>
+    /* Prevent root blowout while allowing the table to scroll independently */
+    html, body {
+      max-width: 100%;
+      overflow-x: clip; /* Modern alternative to hidden that doesn't break sticky headers */
+    }
+
+    /* Constrain the main wrapper so children cannot stretch the screen */
+    main {
+      width: 100%;
+      max-width: 80rem; /* 1280px (max-w-7xl) */
+      overflow-x: hidden;
+    }
+
+    /* Sticky First Column for Mobile Matrix */
+    .sticky-col {
+      position: sticky;
+      left: 0;
+      background-color: #0e1622;
+      z-index: 10;
+    }
+
+    /* Force Table Container to stay within screen boundaries */
+    .table-container {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    .table-container::-webkit-scrollbar-track {
+      background: #0e1622;
+    }
+    .table-container::-webkit-scrollbar-thumb {
+      background: #1f2e42;
+      border-radius: 3px;
+    }
+    .table-container::-webkit-scrollbar-thumb:hover {
+      background: #00f3ff;
+    }
+  </style>
+</head>
+
+<body class="text-textMain font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-cyanNeon selection:text-bgDeep">
+
+  <!-- Decoupled Component Header -->
+  <site-header></site-header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex-1">
+    
+    <!-- Hero Banner & Value Proposition -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-cyanNeon/30 bg-cyanNeon/5 text-cyanNeon font-mono text-xs mb-4">
+        <span class="w-2 h-2 rounded-full bg-greenTerminal animate-pulse"></span>
+        <span>PRODUCTION_RATE_CARD :: Q1_2026</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-mono font-bold tracking-tight text-textMain mb-4">
+        Clear Engineering. <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanNeon to-cyanMuted">Transparent Rates.</span>
+      </h1>
+      <p class="text-sm sm:text-base text-textMuted font-sans max-w-2xl mx-auto leading-relaxed">
+        Zero hidden agency retainers. Zero template bloat. Every project is engineered as a bespoke, ultra-fast static web system with complete source ownership and lifetime agility.
+      </p>
+    </div>
+
+<!-- Deep-Dive Service Specification Sheets -->
+    <div class="space-y-12 mb-24">
+      
+      <!-- Tier 1: The Landing Node -->
+      <section id="tier-landing" class="scroll-mt-28 bg-surfaceDark border border-borderSubtle rounded-lg p-6 sm:p-8 relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-borderSubtle pb-6">
+          <div>
+            <div class="flex items-center space-x-3 mb-2">
+              <span class="font-mono text-xs text-textMuted bg-surfaceLighter px-2.5 py-0.5 rounded border border-borderSubtle">SPEC_01</span>
+              <h2 class="text-xl sm:text-2xl font-mono font-bold text-textMain">The Hyper-Fast Landing Node</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted max-w-xl">
+              Engineered for campaigns, high-impact product releases, local portfolio showcases, and single-service businesses needing maximum conversion speed.
+            </p>
+          </div>
+          <div class="md:text-right font-mono">
+            <div class="text-2xl sm:text-3xl font-bold text-cyanNeon">$45,000 <span class="text-xs text-textMuted">JMD</span></div>
+            <div class="text-xs text-textMuted">~ $290 USD | 50/50 Invoiced Milestone</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-cyanNeon mb-3">Included Technical Deliverables</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Single-page bespoke architecture (HTML5 / Vanilla CSS / Tailored JS).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Hero showcase, benefits breakdown, portfolio grid, &amp; interactive FAQ accordion.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Direct WhatsApp Click-to-Chat trigger + Web3Forms serverless dispatch.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Technical SEO baseline (Semantic layout, meta tags, sitemap, 95+ Lighthouse score).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>DNS configuration &amp; edge deployment to Vercel/Cloudflare.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-amberAlert mb-3">Explicit Scope Boundaries</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Multi-page routing (Limited to single scroll architecture).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Dynamic databases, user auth portals, or e-commerce carts.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Copywriting from scratch (Client supplies core business assets/text).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-borderSubtle flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="font-mono text-xs text-textMuted">ESTIMATED TURNAROUND: 5–7 PRODUCTION DAYS</span>
+          <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20Tier%201%20(Landing%20Node)." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full sm:w-auto px-6 py-3 bg-surfaceLighter border border-cyanNeon/50 text-cyanNeon hover:bg-cyanNeon/10 rounded font-mono text-xs font-bold transition-all text-center min-h-[44px] flex items-center justify-center">
+            INITIALIZE TIER 1
+          </a>
+        </div>
+      </section>
+
+      <!-- Tier 2: Multi-View Architecture (Featured SME Tier) -->
+      <section id="tier-multiview" class="scroll-mt-28 bg-surfaceDark border-2 border-cyanNeon rounded-lg p-6 sm:p-8 relative overflow-hidden shadow-[0_0_20px_rgba(0,243,255,0.12)]">
+        <div class="absolute top-0 right-0 bg-cyanNeon text-bgDeep font-mono text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+          ★ RECOMMENDED FOR SMES ★
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-borderSubtle pb-6 mt-2 sm:mt-0">
+          <div>
+            <div class="flex items-center space-x-3 mb-2">
+              <span class="font-mono text-xs text-bgDeep bg-cyanNeon px-2.5 py-0.5 rounded font-bold">SPEC_02</span>
+              <h2 class="text-xl sm:text-2xl font-mono font-bold text-textMain">Multi-View Performance Architecture</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted max-w-xl">
+              Complete corporate and trade web application. Built for established contractors, service clinics, and firms requiring independent service pages and local search domination.
+            </p>
+          </div>
+          <div class="md:text-right font-mono">
+            <div class="text-2xl sm:text-3xl font-bold text-cyanNeon">$85,000 <span class="text-xs text-textMuted">JMD</span></div>
+            <div class="text-xs text-textMuted">~ $550 USD | 50/50 Invoiced Milestone</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-cyanNeon mb-3">Included Technical Deliverables</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Up to 5 modular static views (Home, About/Story, Services/Catalog, Portfolio, Contact).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Component-based architecture prepared for seamless React/Astro scalability.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Advanced Contact Hub with quote estimator form &amp; custom validation logic.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Full Technical &amp; Local SEO Suite (JSON-LD schema, OpenGraph social cards, XML sitemap).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Global CDN Edge distribution, DNS records setup, and SSL hard-locking.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-amberAlert mb-3">Explicit Scope Boundaries</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Full e-commerce payment checkouts with multi-tier inventory accounting.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Custom user authentication / login portals (Available in Tier 3).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Ongoing weekly blog writing (Foundation is ready; articles supplied by client).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-borderSubtle flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="font-mono text-xs text-textMuted">ESTIMATED TURNAROUND: 10–14 PRODUCTION DAYS</span>
+          <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'm%20interested%20in%20Tier%202%20(Multi-View%20Architecture)." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full sm:w-auto px-6 py-3 bg-cyanNeon text-bgDeep hover:bg-cyanMuted rounded font-mono text-xs font-bold transition-all text-center shadow-[0_0_12px_rgba(0,243,255,0.4)] min-h-[44px] flex items-center justify-center">
+            INITIALIZE TIER 2
+          </a>
+        </div>
+      </section>
+
+      <!-- Tier 3: Custom Full-Stack Application -->
+      <section id="tier-fullstack" class="scroll-mt-28 bg-surfaceDark border border-borderSubtle rounded-lg p-6 sm:p-8 relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-borderSubtle pb-6">
+          <div>
+            <div class="flex items-center space-x-3 mb-2">
+              <span class="font-mono text-xs text-textMuted bg-surfaceLighter px-2.5 py-0.5 rounded border border-borderSubtle">SPEC_03</span>
+              <h2 class="text-xl sm:text-2xl font-mono font-bold text-textMain">Custom Full-Stack Application</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted max-w-xl">
+              Engineered for organizations requiring dynamic data, headless content management, authenticated client portals, or custom workflow tools.
+            </p>
+          </div>
+          <div class="md:text-right font-mono">
+            <div class="text-2xl sm:text-3xl font-bold text-textMain">FROM $160,000 <span class="text-xs text-textMuted">JMD</span></div>
+            <div class="text-xs text-textMuted">~ $1,050+ USD | Milestones Scoped by Architecture</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-cyanNeon mb-3">Included Technical Deliverables</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Full React / Astro / Node.js architecture with serverless API functions.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Headless CMS integration (Sanity / Supabase) for non-technical team updates.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Payment gateway integration (Payoneer / Stripe / Local checkout APIs).</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Secure User Auth, role-based dashboards, and custom database schema.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-greenTerminal font-mono">✓</span>
+                <span>Automated CI/CD deployment pipelines with preview environments.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-mono text-xs uppercase tracking-wider text-amberAlert mb-3">Scope Scope Governance</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-textMuted">
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Discovery fee applies to complex interactive scoping before kickoff.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-amberAlert font-mono">✕</span>
+                <span>Third-party API and database licensing billed directly to client account.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-borderSubtle flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="font-mono text-xs text-textMuted">TURNAROUND: 3–6 WEEKS (DEPENDENT ON SCOPE)</span>
+          <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'd%20like%20to%20schedule%20a%20Tier%203%20Architecture%20Discovery." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="w-full sm:w-auto px-6 py-3 bg-surfaceLighter border border-textMuted hover:border-cyanNeon hover:text-cyanNeon rounded font-mono text-xs font-bold transition-all text-center min-h-[44px] flex items-center justify-center">
+            REQUEST ARCHITECTURE DISCOVERY
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Monthly Care & Continuity Retainer -->
+    <section class="bg-gradient-to-br from-surfaceDark to-bgDeep border border-amberAlert/40 rounded-lg p-6 sm:p-8 mb-24 relative overflow-hidden">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div>
+          <div class="inline-flex items-center space-x-2 px-2.5 py-0.5 rounded bg-amberAlert/10 text-amberAlert font-mono text-xs mb-3">
+            <span>OPTIONAL INFRASTRUCTURE RETAINER</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-mono font-bold text-textMain mb-2">Monthly Site Guardian &amp; Speed Retainer</h2>
+          <p class="text-xs sm:text-sm text-textMuted max-w-2xl leading-relaxed">
+            Websites degrade when untended. This retainer guarantees your edge distribution stays live, DNS remains secure, SSL certificates renew seamlessly, and small content updates are executed without hourly invoices.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mt-4 text-xs font-mono text-textMuted">
+            <div><span class="text-greenTerminal">✓</span> 24/7 DNS &amp; Uptime Sentinel Monitoring</div>
+            <div><span class="text-greenTerminal">✓</span> Up to 2 Hours Dedicated Content Changes / Mo</div>
+            <div><span class="text-greenTerminal">✓</span> Quarterly Speed &amp; Lighthouse Health Audits</div>
+            <div><span class="text-greenTerminal">✓</span> Priority WhatsApp Engineering Dispatch</div>
+          </div>
+        </div>
+        <div class="lg:text-right font-mono w-full lg:w-auto border-t lg:border-t-0 border-borderSubtle pt-4 lg:pt-0">
+          <div class="text-2xl sm:text-3xl font-bold text-amberAlert">$10,000 <span class="text-xs text-textMuted">JMD / MO</span></div>
+          <div class="text-xs text-textMuted mb-4">~ $65 USD | Cancel Anytime</div>
+          <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'd%20like%20to%20add%20the%20Monthly%20Care%20Retainer." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="inline-block w-full text-center px-6 py-3 border border-amberAlert text-amberAlert hover:bg-amberAlert/10 rounded text-xs font-bold transition-all min-h-[44px]">
+            ADD CARE RETAINER
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparative Architectural Matrix -->
+    <section id="matrix" class="mb-24">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-mono font-bold text-textMain mb-3">Architectural Feature Matrix</h2>
+        <p class="text-xs sm:text-sm text-textMuted">
+          A side-by-side engineering breakdown so you can choose the precise architectural fit for your operational needs.
+        </p>
+        <div class="md:hidden mt-3 text-[11px] font-mono text-cyanNeon flex items-center justify-center space-x-1">
+          <span>⇄ SWIPE HORIZONTALLY TO INSPECT</span>
+        </div>
+      </div>
+
+      <div class="table-container overflow-x-auto border border-borderSubtle rounded-lg bg-surfaceDark">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-borderSubtle font-mono text-textMuted bg-surfaceLighter">
+              <th class="p-4 sticky-col font-semibold">ENGINEERING_SPEC</th>
+              <th class="p-4 font-semibold text-textMain min-w-[180px]">TIER 1 (LANDING)</th>
+              <th class="p-4 font-semibold text-cyanNeon min-w-[200px]">TIER 2 (MULTI-VIEW)</th>
+              <th class="p-4 font-semibold text-textMain min-w-[220px]">TIER 3 (FULL-STACK)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-borderSubtle font-mono text-xs">
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Typical Turnaround</td>
+              <td class="p-4 text-textMuted">5–7 Days</td>
+              <td class="p-4 text-cyanNeon font-bold">10–14 Days</td>
+              <td class="p-4 text-textMuted">3–6 Weeks</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Page Views</td>
+              <td class="p-4 text-textMuted">1 High-Density View</td>
+              <td class="p-4 text-cyanNeon font-bold">Up to 5 Dedicated Views</td>
+              <td class="p-4 text-textMuted">Modular / Dynamic Pages</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Underlying Engine</td>
+              <td class="p-4 text-textMuted">Pure HTML5 / Tailwind / Vanilla JS</td>
+              <td class="p-4 text-cyanNeon font-bold">Semantic HTML5 / Multi-Script Component Architecture</td>
+              <td class="p-4 text-textMuted">React / Astro / Node Serverless</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Contact Pipeline</td>
+              <td class="p-4 text-textMuted">WhatsApp + Direct Form API</td>
+              <td class="p-4 text-cyanNeon font-bold">Scoped Quote Hub + Field Validation</td>
+              <td class="p-4 text-textMuted">Custom Database / CRM Dispatch</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">SEO Engineering</td>
+              <td class="p-4 text-textMuted">Semantic Meta + Sitemap</td>
+              <td class="p-4 text-cyanNeon font-bold">Full Local Schema + Geo-Coord + Indexing</td>
+              <td class="p-4 text-textMuted">Dynamic Serverless Meta + Programmatic Schema</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Target Lighthouse Score</td>
+              <td class="p-4 text-greenTerminal font-bold">98–100/100</td>
+              <td class="p-4 text-greenTerminal font-bold">95–100/100</td>
+              <td class="p-4 text-greenTerminal font-bold">90–98/100</td>
+            </tr>
+            <tr class="hover:bg-surfaceLighter/40">
+              <td class="p-4 sticky-col text-textMain font-semibold">Ongoing Software Dues</td>
+              <td class="p-4 text-textMuted">$0/mo (Free Cloud Edge Tier)</td>
+              <td class="p-4 text-textMuted">$0/mo (Standard CDN Edge)</td>
+              <td class="p-4 text-textMuted">Varies by Database / Auth Volume</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Secure Remittance Hub & Payment Policies -->
+    <section id="remittance" class="max-w-5xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-mono font-bold text-textMain mb-3">Secure Remittance &amp; Billing Protocol</h2>
+        <p class="text-xs sm:text-sm text-textMuted">
+          Protected workflows for local Jamaican enterprises and international clients.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Protocol 1: 50/50 Milestone -->
+        <div class="bg-surfaceDark border border-borderSubtle rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-8 h-8 rounded-lg bg-cyanNeon/10 border border-cyanNeon/30 flex items-center justify-center font-mono text-cyanNeon font-bold text-xs">01</span>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-textMain">The 50/50 Milestone Contract</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted leading-relaxed mb-4">
+              Every build begins with a signed project scope statement. A 50% mobilization deposit initiates UI/UX drafting and core code architecture. The remaining 50% is settled only upon final staging approval before DNS domain handoff.
+            </p>
+            <div class="p-3 bg-surfaceLighter rounded border border-borderSubtle text-[11px] font-mono text-textMuted space-y-1">
+              <div><span class="text-cyanNeon">MOBILIZATION:</span> 50% to commence sprint.</div>
+              <div><span class="text-greenTerminal">HANDOFF:</span> 50% upon final staging sign-off.</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderSubtle text-[11px] font-mono text-textMuted">
+            Zero ambiguity. Complete risk mitigation for both parties.
+          </div>
+        </div>
+
+        <!-- Protocol 2: Secure Bank Remittance -->
+        <div class="bg-surfaceDark border border-borderSubtle rounded-xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-8 h-8 rounded-lg bg-greenTerminal/10 border border-greenTerminal/30 flex items-center justify-center font-mono text-greenTerminal font-bold text-xs">02</span>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-textMain">Direct Local Bank Remittance</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted leading-relaxed mb-4">
+              To protect account integrity and prevent fraudulent slip generation, bank routing details are delivered directly via official PDF invoice upon project authorization.
+            </p>
+            <div class="p-3 bg-surfaceLighter rounded border border-borderSubtle text-[11px] font-mono text-textMuted">
+              <div class="text-textMain font-semibold mb-1">Supported Local Banking Rails:</div>
+              <div>NCB, Scotiabank, CIBC Caribbean, JN Bank (ACH / Direct Transfer)</div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-borderSubtle">
+            <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'd%20like%20to%20request%20a%20banking%20invoice." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="w-full py-3 px-4 bg-surfaceLighter hover:bg-cyanNeon/10 text-cyanNeon border border-cyanNeon/40 rounded font-mono text-xs font-bold text-center flex items-center justify-center space-x-2 transition-all min-h-[46px]">
+              <span>REQUEST INVOICE VIA WHATSAPP</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Payoneer & International Gateway -->
+      <div class="mt-8 bg-surfaceDark border border-borderSubtle rounded-xl p-6 sm:p-8">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="max-w-xl">
+            <div class="flex items-center space-x-3 mb-2">
+              <span class="w-8 h-8 rounded-lg bg-amberAlert/10 border border-amberAlert/30 flex items-center justify-center font-mono text-amberAlert font-bold text-xs">03</span>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-textMain">International &amp; Instant Card Gateway</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-textMuted leading-relaxed">
+              Accepting international credit/debit cards and cross-border bank deposits powered by Payoneer's secure enterprise processing.
+            </p>
+            
+            <!-- High-DPI Payment Badges -->
+            <div class="mt-5 flex flex-wrap items-center gap-3">
+              
+              <!-- Visa -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center hover:border-cyanNeon/50 transition-colors">
+                <svg class="h-6 w-auto overflow-visible" viewBox="0 0 48 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.345 0.5L12.69 15.5H8.327L5.073 3.655C4.873 2.873 4.7 2.582 4.091 2.236C3.091 1.7 1.455 1.2 0 0.873L0.091 0.5H7.073C7.964 0.5 8.764 1.109 8.945 2.109L10.655 11.236L14.927 0.5H19.345ZM36.327 10.527C36.345 6.509 30.745 6.291 30.782 4.491C30.8 3.945 31.327 3.364 32.455 3.218C33.018 3.145 34.564 3.091 36.364 3.927L37.055 0.727C36.109 0.382 34.909 0.055 33.382 0.055C29.345 0.055 26.473 2.2 26.455 5.255C26.418 7.527 28.473 8.8 30.018 9.564C31.6 10.345 32.127 10.836 32.127 11.527C32.109 12.582 30.855 13.055 29.691 13.073C27.618 13.109 26.418 12.527 25.455 12.073L24.745 15.382C25.691 15.818 27.436 16.2 29.236 16.218C33.527 16.218 36.309 14.109 36.327 10.527ZM47.018 15.5H50.855L47.509 0.5H43.945C43.036 0.5 42.273 1.036 41.945 1.818L35.818 15.5H40.091L40.945 13.164H46.164L47.018 15.5ZM42.127 9.945L44.273 4.055L45.509 9.945H42.127ZM25.564 0.5L22.182 15.5H18.018L21.4 0.5H25.564Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+
+              <!-- Mastercard -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center hover:border-cyanNeon/50 transition-colors">
+                <svg class="h-6 w-auto overflow-visible" viewBox="0 0 38 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#EB001B"/>
+                  <circle cx="26" cy="12" r="12" fill="#F79E1B" fill-opacity="0.88"/>
+                </svg>
+              </div>
+
+              <!-- American Express -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center hover:border-cyanNeon/50 transition-colors">
+                <div class="bg-[#016FD0] text-white font-mono font-black text-xs px-2 py-0.5 rounded tracking-tighter">
+                  AMEX
+                </div>
+              </div>
+
+              <!-- Apple Pay -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center space-x-1.5 hover:border-cyanNeon/50 transition-colors">
+                <svg class="h-5 w-auto fill-current text-white overflow-visible" viewBox="0 0 170 170">
+                  <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.74 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.07-7.7-7.89-12-14.46-6.13-9.38-10.9-19.98-14.3-31.79-3.41-11.82-5.11-23.01-5.11-33.58 0-14.15 3.57-25.99 10.72-35.53 7.14-9.54 16.05-14.37 26.71-14.5 4.8 0 10.14 1.27 16.03 3.79 5.88 2.53 9.77 3.86 11.66 4 2.12-.27 6.13-1.67 12.03-4.22 5.9-2.54 11.21-3.73 15.93-3.57 11.88.67 21.37 5.16 28.48 13.46-10.37 6.27-15.42 15.02-15.15 26.24.27 8.81 3.63 16.14 10.08 22 6.46 5.86 14.11 9.17 22.95 9.94-2.18 6.4-4.81 12.74-7.89 19.03zM119.22 33.64c0-6.72 2.45-13.06 7.35-19.03 4.9-5.96 11.01-9.76 18.33-11.41.27 1.07.41 2.07.41 3 0 6.64-2.5 12.87-7.5 18.69-5.01 5.82-11.25 9.49-18.73 11-0.14-.73-.21-1.48-.21-2.25z"/>
+                </svg>
+                <span class="font-sans font-semibold text-xs text-white tracking-tight">Pay</span>
+              </div>
+
+              <!-- Google Pay -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center space-x-1.5 hover:border-cyanNeon/50 transition-colors">
+                <span class="font-sans font-bold text-sm text-white">G</span>
+                <span class="font-sans font-semibold text-xs text-textMuted">Pay</span>
+              </div>
+
+              <!-- PayPal -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center hover:border-cyanNeon/50 transition-colors">
+                <span class="font-sans font-black italic text-sm text-[#0079C1]">Pay<span class="text-[#00457C]">Pal</span></span>
+              </div>
+
+              <!-- Payoneer Verified -->
+              <div class="h-11 px-4 bg-surfaceLighter rounded-lg border border-borderSubtle flex items-center justify-center space-x-2 hover:border-cyanNeon/50 transition-colors">
+                <span class="w-3.5 h-3.5 rounded-full border-2 border-[#FF4800]"></span>
+                <span class="font-mono text-xs font-bold tracking-wider text-textMain">PAYONEER</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Checkout Trigger Button -->
+          <div class="w-full lg:w-auto font-mono">
+            <button id="openCheckoutModalBtn" class="w-full sm:w-auto px-8 py-3.5 bg-cyanNeon text-bgDeep hover:bg-cyanMuted font-mono text-xs font-bold rounded shadow-[0_0_15px_rgba(0,243,255,0.3)] transition-all min-h-[46px] flex items-center justify-center">
+              LAUNCH PAYONEER CHECKOUT
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Payoneer Checkout Simulator -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-bgDeep/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-surfaceDark border border-cyanNeon max-w-md w-full rounded-xl p-6 sm:p-8 shadow-[0_0_30px_rgba(0,243,255,0.2)]">
+      <div class="flex items-center justify-between border-b border-borderSubtle pb-4 mb-4">
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-greenTerminal"></span>
+          <span class="font-mono text-xs font-bold text-cyanNeon">PAYONEER_SECURE_TUNNEL</span>
+        </div>
+        <button id="closeCheckoutModalBtn" class="text-textMuted hover:text-textMain font-mono text-lg p-1 min-h-[44px] min-w-[44px] flex items-center justify-center">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs font-sans text-textMuted">
+        <p>You are about to launch a verified Payoneer payment link. Please select your target engagement tier:</p>
+        
+        <select id="tierSelector" class="w-full bg-surfaceLighter border border-borderSubtle text-textMain rounded p-3 font-mono text-xs focus:border-cyanNeon outline-none min-h-[44px]">
+            <option value="tier1">Tier 1: Landing Node Deposit ($145 USD / 50%)</option>
+            <option value="tier2" selected>Tier 2: Multi-View Architecture Deposit ($275 USD / 50%)</option>
+            <option value="tier3">Tier 3: Custom Architecture Discovery / Mobilization ($525 USD)</option>
+            <option value="care">Monthly Care Retainer ($65 USD / First Month)</option>
+        </select>
+        <div class="p-3 bg-surfaceLighter/60 rounded border border-borderSubtle text-[11px] font-mono">
+          <span class="text-greenTerminal">ENCRYPTION:</span> 256-bit SSL Gateway.<br />
+          No raw card data touches Pelican Script servers.
+        </div>
+
+        <button id="confirmCheckoutBtn" class="w-full py-3.5 bg-cyanNeon text-bgDeep font-mono font-bold text-xs rounded hover:bg-cyanMuted transition-all min-h-[44px]">
+          REDIRECT TO PAYONEER GATEWAY →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decoupled Component Footer -->
+  <site-footer></site-footer>
+
+<!-- Interactive Modal Controller Script -->
+  <script>
+    const modal = document.getElementById('checkoutModal');
+    const openBtn = document.getElementById('openCheckoutModalBtn');
+    const closeBtn = document.getElementById('closeCheckoutModalBtn');
+    const confirmBtn = document.getElementById('confirmCheckoutBtn');
+
+    // Centralized Payoneer Payment Link Registry
+    const paymentLinks = {
+      tier1: "https://link.payoneer.com/Token?t=2A83C363CA6B4C4E80A69762774E3174&src=pl", // Update when you generate Tier 1's link
+      tier2: "https://link.payoneer.com/Token?t=2A83C363CA6B4C4E80A69762774E3174&src=pl", // Update when you generate Tier 2's link
+      tier3: "https://link.payoneer.com/Token?t=2A83C363CA6B4C4E80A69762774E3174&src=pl", // Your active Tier 3 Link
+      care: "https://link.payoneer.com/Token?t=2A83C363CA6B4C4E80A69762774E3174&src=pl"   // Update when you generate Retainer link
+    };
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+      });
+    }
+
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        const selected = document.getElementById('tierSelector').value;
+        const targetUrl = paymentLinks[selected];
+
+        if (targetUrl) {
+          // Closes modal and dispatches directly to Payoneer in a new tab
+          modal.classList.add('hidden');
+          window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        } else {
+          alert(`Selected tier [${selected.toUpperCase()}] requires a custom scope invoice.`);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
