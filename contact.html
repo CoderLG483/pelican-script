@@ -1,0 +1,407 @@
+    <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Inquiries | Pelican Script</title>
+  <meta name="description" content="Initiate a project consultation with Pelican Script. High-performance web systems engineered for Jamaican and Caribbean SMEs.">
+  
+  <!-- Brand icon -->
+  <link rel="icon" type="image/png" href="icons/internet.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/token.css">
+
+  <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: #080d14;
+      color: #cbd5e1;
+    }
+
+    /* Outer Centered Wrapper */
+    .contact-wrapper {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem 1.5rem;
+      box-sizing: border-box;
+    }
+
+    /* Page Header */
+    .contact-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      background: rgba(0, 243, 255, 0.05);
+      color: #00f3ff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .contact-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Two-Column Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1.25fr;
+        gap: 3rem;
+      }
+    }
+
+    /* Left Column: Direct Communication Channels & Status */
+    .channels-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .terminal-card {
+      background: rgba(14, 22, 34, 0.85);
+      border: 1px solid rgba(0, 243, 255, 0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.06);
+      backdrop-filter: blur(8px);
+      box-sizing: border-box;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      color: #00f3ff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .card-body {
+      font-size: 0.825rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Quick Action Buttons Stack */
+    .direct-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .direct-actions a {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Status HUD */
+    .status-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.78rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(31, 46, 66, 0.6);
+      padding-bottom: 0.5rem;
+    }
+
+    .status-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .status-key {
+      color: #64748b;
+    }
+
+    .status-val {
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .status-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #00ff66;
+    }
+
+    /* Right Column: Contact Transmission Terminal */
+    .form-panel {
+      background: rgba(14, 22, 34, 0.85);
+      border: 1px solid rgba(0, 243, 255, 0.25);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(0, 243, 255, 0.06);
+      backdrop-filter: blur(8px);
+      box-sizing: border-box;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: #080d14;
+      border: 1px solid #1f2e42;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: #00f3ff;
+      box-shadow: 0 0 12px rgba(0, 243, 255, 0.25);
+    }
+
+    .form-select option {
+      background: #080d14;
+      color: #ffffff;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: transparent;
+      border: 1.5px solid #00f3ff;
+      color: #00f3ff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.95rem 1.5rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 14px rgba(0, 243, 255, 0.15);
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background: #00f3ff;
+      color: #080d14;
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Shared Component Header -->
+  <site-header></site-header>
+
+  <main id="main-content">
+    <div class="contact-wrapper">
+      
+      <!-- Section Header -->
+      <header class="contact-header">
+        <div class="contact-badge">
+          <span class="w-2 h-2 rounded-full bg-[#00f3ff] animate-pulse"></span>
+          <span>SYSTEM_DISPATCH :: SECURE_COMMS</span>
+        </div>
+        <h1 class="contact-title">Transmit An Inquiry.</h1>
+        <p class="contact-subtitle">
+          Direct lines of communication for bespoke web systems, pricing scope discussions, or general inquiries.
+        </p>
+      </header>
+
+      <!-- Main Interaction Grid -->
+      <div class="contact-grid">
+        
+        <!-- Left: Quick Direct Channels & Status -->
+        <div class="channels-panel">
+          
+          <!-- Direct Social Channels -->
+          <div class="terminal-card">
+            <span class="card-label">[ FASTEST PROTOCOLS ]</span>
+            <h2 class="card-title">Direct Response Lines</h2>
+            <p class="card-body">
+              For real-time consultation and instant project triage, WhatsApp is our primary channel. Follow along on Instagram for live build screenshots and releases.
+            </p>
+
+            <div class="direct-actions">
+              <a href="https://wa.me/18764883919?text=Hi%20Pelican%20Script,%20I'd%20like%20to%20discuss%20a%20project"
+                 class="btn-whatsapp"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Direct message Pelican Script on WhatsApp">
+                <img src="icons/wa-white.png" alt="" class="whatsapp-icon" width="20" height="20">
+                <span class="btn-text">WhatsApp Hotline</span>
+              </a>
+
+              <a href="https://instagram.com/thepelicanscript"
+                 class="btn-instagram"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Visit Pelican Script on Instagram">
+                <img src="icons/ig-white.png" alt="" class="instagram-icon" width="20" height="20">
+                <span class="btn-text">@thepelicanscript</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Operational Node Status -->
+          <div class="terminal-card">
+            <span class="card-label">[ SYSTEM METRICS ]</span>
+            <h2 class="card-title">Operational Status</h2>
+            
+            <ul class="status-list">
+              <li class="status-item">
+                <span class="status-key">Base of Operations:</span>
+                <span class="status-val">Kingston, Jamaica (UWI Mona)</span>
+              </li>
+              <li class="status-item">
+                <span class="status-key">Service Radius:</span>
+                <span class="status-val">Jamaica &amp; Remote Global</span>
+              </li>
+              <li class="status-item">
+                <span class="status-key">Typical Response SLA:</span>
+                <span class="status-val">&lt; 24 Hours</span>
+              </li>
+              <li class="status-item">
+                <span class="status-key">Capacity Status:</span>
+                <span class="status-val status-live">
+                  <span style="display:inline-block; width:6px; height:6px; background:#00ff66; border-radius:50%;"></span>
+                  Accepting Q1 Projects
+                </span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Right: Structured Transmission Form -->
+        <div class="form-panel">
+          <span class="card-label">[ TRANSMISSION FORM ]</span>
+          <h2 class="card-title">Project Specifications</h2>
+          <p class="card-body" style="margin-bottom: 1.5rem;">
+            Submit your core requirements below. We'll review your scope and follow up directly via your preferred channel.
+          </p>
+
+          <form action="https://formspree.io/f/placeholder" method="POST" id="inquiry-form">
+            <div class="form-group">
+              <label for="client-name" class="form-label">&gt; YOUR NAME / ENTITY *</label>
+              <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. John Brown / Acme Ltd." required>
+            </div>
+
+            <div class="form-group">
+              <label for="client-email" class="form-label">&gt; CONTACT EMAIL / PHONE *</label>
+              <input type="text" id="client-email" name="contact" class="form-input" placeholder="e.g. name@domain.com or (876) 000-0000" required>
+            </div>
+
+            <div class="form-group">
+              <label for="project-tier" class="form-label">&gt; TARGET ARCHITECTURE PACKAGE</label>
+              <select id="project-tier" name="tier" class="form-select">
+                <option value="tier1">Starter // Digital Business Card ($45k - $65k JMD)</option>
+                <option value="tier2" selected>Growth // Standard SME Hub ($80k - $130k JMD)</option>
+                <option value="tier3">Enterprise // Custom Business Engine ($160k - $250k+ JMD)</option>
+                <option value="consultation">Unsure / Need Free Architecture Discovery</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="project-notes" class="form-label">&gt; PROJECT OVERVIEW &amp; GOALS *</label>
+              <textarea id="project-notes" name="message" class="form-textarea" placeholder="Tell us about your business, what functionality you need, and any launch timelines..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Dispatch Transmission &rarr;
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Shared Component Footer -->
+  <site-footer></site-footer>
+
+  <!-- Scripts -->
+  <script src="scripts/components.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

@@ -29,7 +29,7 @@ class SiteHeader extends HTMLElement {
                     <li><a href="about.html">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             </div>
@@ -65,10 +65,12 @@ class SiteFooter extends HTMLElement {
     <!-- ==============================================
      GLOBAL FOOTER
      ============================================== -->
-    <footer class="site-footer">
+    <footer class="site-footer" style="font-family: 'JetBrains Mono', ui-monospace, monospace; text-align: center; padding: 2.5rem 1rem;">
         <div class="container footer-container">
             <div class="footer-meta">
-                <span class="copyright-mark">© <span id="current-year">2026</span> Pelican Script. All rights reserved.</span>
+                <span class="copyright-mark" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; color: #cbd5e1; letter-spacing: 0.06em; opacity: 0.9;">
+                  © <span id="current-year">2026</span> Pelican Script. All rights reserved.
+                </span>
             </div>
         </div>
     </footer>
