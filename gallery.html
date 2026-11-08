@@ -29,20 +29,89 @@
       color: #cbd5e1;
     }
 
+    /* Isolated Stacking Context so Header dropdown always stays in front */
+    #main-content {
+      position: relative;
+      z-index: 1;
+    }
+
     /* Outer Centered Wrapper */
     .gallery-wrapper {
       width: 100%;
       max-width: 1140px;
       margin: 0 auto;
-      padding: 3.5rem 1.5rem 5rem 1.5rem;
+      padding: 2.5rem 1.5rem 5rem 1.5rem;
       box-sizing: border-box;
     }
 
-    /* Page Header */
+/* Header Section - Forces absolute center */
     .gallery-header {
+      width: 100%;
       text-align: center;
-      margin-top: 1rem;
-      margin-bottom: 3.5rem;
+      margin: 1.5rem auto 3.5rem auto;
+      padding: 0;
+      display: block; /* prevents rogue flex-row inheritance */
+    }
+
+    /* Badge Node - Centered Block Element */
+    .gallery-badge {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      background: rgba(0, 243, 255, 0.05);
+      color: #00f3ff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      margin: 0 auto 1.25rem auto;
+      float: none !important;
+      position: static !important;
+    }
+
+    .gallery-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.75rem 0;
+      text-align: center;
+    }
+
+    .gallery-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .gallery-header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+      .gallery-badge {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.65rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-header {
+        margin-top: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      .gallery-badge {
+        font-size: 0.68rem;
+        padding: 0.28rem 0.65rem;
+        margin-bottom: 0.85rem;
+      }
     }
 
     .gallery-title {
@@ -60,6 +129,21 @@
       max-width: 650px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+
+    /* Mobile Fine-Tuning */
+    @media (max-width: 640px) {
+      .gallery-wrapper {
+        padding-top: 1.5rem;
+      }
+      .gallery-header {
+        margin-top: 0.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .gallery-badge {
+        font-size: 0.68rem;
+        padding: 0.28rem 0.65rem;
+      }
     }
 
     /* Project Grid Layout */
@@ -312,8 +396,14 @@
   <main id="main-content">
     <div class="gallery-wrapper">
       
-      <!-- Clean Hero (Badge Removed & Clearance Added) -->
+<!-- Section Header -->
       <header class="gallery-header">
+        <div style="text-align: center; width: 100%;">
+          <div class="gallery-badge">
+            <span style="display: inline-block; width: 6px; height: 6px; background-color: #00f3ff; border-radius: 50%;"></span>
+            <span>SYSTEM_ARCHIVE :: SHOWCASE_MATRIX</span>
+          </div>
+        </div>
         <h1 class="gallery-title">Deployed Systems.</h1>
         <p class="gallery-subtitle">
           Engineered for Caribbean bandwidth. Clean code, sub-second latency, and bespoke digital experiences.
