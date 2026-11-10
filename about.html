@@ -79,7 +79,7 @@
       grid-template-columns: 1fr;
       gap: 2.5rem;
       align-items: start;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
 
     @media (min-width: 900px) {
@@ -290,29 +290,50 @@
       color: #e2e8f0;
     }
 
-    /* Mantra Pill Section */
+    /* Mantra Section - Full Width Centered Banner Across Both Columns */
     .mantra-block {
       border-top: 1px solid rgba(31, 46, 66, 0.8);
-      padding-top: 2rem;
-      margin-top: 2rem;
+      padding-top: 2.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .mantra-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #64748b;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      text-align: center;
+      width: 100%;
+      display: block;
     }
 
     .mantra-container {
       position: relative;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.75rem;
       background: rgba(14, 22, 34, 0.95);
       border: 1.5px solid #00ff66;
       border-radius: 9999px;
-      padding: 0.7rem 1.5rem;
+      padding: 0.75rem 2rem;
       font-family: 'JetBrains Mono', monospace;
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
       user-select: none;
-      min-height: 44px;
+      min-height: 46px;
       box-sizing: border-box;
+      margin: 0 auto;
     }
 
     .mantra-container:hover {
@@ -330,7 +351,6 @@
 
     .mantra-en {
       position: absolute;
-      left: 2.75rem;
       color: #ffffff;
       font-weight: 600;
       font-size: 0.85rem;
@@ -339,6 +359,7 @@
       pointer-events: none;
       transition: opacity 0.25s ease, transform 0.25s ease;
       white-space: nowrap;
+      text-align: center;
     }
 
     .mantra-container:hover .mantra-jp {
@@ -434,13 +455,16 @@
         
         <!-- Story 01 -->
         <section class="story-section">
-          <span class="story-tag">[ 01 // THE ORIGIN ]</span>
-          <h2 class="story-heading">Engineering from the ground up.</h2>
+          <span class="story-tag">[ 01 // THE ORIGIN &amp; INSPIRATION ]</span>
+          <h2 class="story-heading">Rooted in Campus Heritage. Engineered for the Open Web.</h2>
           <p class="story-body">
-            Lincoln is a Computer Science student at UWI Mona, balancing the grind of algorithm lectures, late-night code reviews, and the realities of being a broke university student with an obsession for systems architecture. Rather than treating computing solely as academic theory, he set out to build fast, tactile software engineered for the open web.
+            Lincoln is a Computer Science student at the University of the West Indies, Mona, balancing algorithm design, late-night code reviews, and the realities of student life with an obsession for resilient software systems. Rather than treating computer science purely as an academic exercise, he set out to build fast, tactile digital assets that solve real operational headaches.
           </p>
           <p class="story-body">
-            Surveying Jamaica and the wider Caribbean, he noticed a critical gap: hardworking small and medium enterprises (SMEs) running standout local operations, but handcuffed to sluggish, bloated page-builders or broken links that stall out on mobile data. He established <strong>Pelican Script</strong> to bring clean, hand-crafted code, transparent pricing, and sub-second performance to Caribbean business owners who need tools built to compete.
+            The name and brand identity draw direct inspiration from the iconic brown pelican of the UWI crest—a historic regional symbol of quiet resilience and nurturing vigilance. Pelican Script takes that campus heritage and re-engineers it through a modern, cyber-terminal lens: vigilant against page bloat, unyielding on sub-second speed, and dedicated to elevating local enterprises.
+          </p>
+          <p class="story-body">
+            Across Jamaica and the wider Caribbean, high-performing businesses frequently find themselves held back by slow, fragile website templates that stall out on spotty mobile data. Pelican Script was built to bridge that gap with hand-crafted code, transparent fixed pricing, and 100% digital asset ownership.
           </p>
         </section>
 
@@ -475,19 +499,19 @@
           </div>
         </section>
 
-        <!-- Mantra Node -->
-        <section class="mantra-block">
-          <div class="rig-label">CORE OPERATIONAL MANTRA (HOVER TO TRANSLATE)</div>
-          <div class="mantra-container" title="Hover to translate">
-            <span class="dot" style="width: 8px; height: 8px; background: #00ff66; border-radius: 50%;"></span>
-            <span class="mantra-jp">「できることをやるだけ。」</span>
-            <span class="mantra-en">"Just do what you can."</span>
-          </div>
-        </section>
-
       </article>
 
-    </div>
+    </div><!-- .about-grid -->
+
+    <!-- Mantra Node - Outside the 2-column grid, spans full page width and aligns dead center -->
+    <section class="mantra-block">
+      <div class="mantra-label">CORE OPERATIONAL MANTRA (HOVER/TAP TO TRANSLATE)</div>
+      <div class="mantra-container" title="Hover to translate">
+        <span class="dot" style="width: 8px; height: 8px; background: #00ff66; border-radius: 50%;"></span>
+        <span class="mantra-jp">「できることをやるだけ。」</span>
+        <span class="mantra-en">"Just do what you can."</span>
+      </div>
+    </section>
 
     <!-- Closing CTA Footer -->
     <footer class="about-cta-footer">
