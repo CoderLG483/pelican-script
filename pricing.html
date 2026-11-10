@@ -71,6 +71,13 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    /* Lock the custom header above all page content and animated elements */
+    .site-header {
+      position: relative;
+      z-index: 50;
+      display: block;
+    }
+
     .table-container::-webkit-scrollbar {
       height: 6px;
     }
