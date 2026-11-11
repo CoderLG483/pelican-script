@@ -19,12 +19,29 @@ if (navToggle && primaryNav) {
   });
 }
 
-// Flip cards on tap/click for mobile & touch devices
-document.querySelectorAll('.flip-card').forEach(card => {
+// Mobile & touch flip cards with auto-close and outside tap dismissal
+const flipCards = document.querySelectorAll('.flip-card');
+
+flipCards.forEach(card => {
   card.addEventListener('click', (e) => {
-    // If the client tapped a link or button inside the card, let it navigate
+    // If the client tapped an action button or link inside, let navigation occur
     if (e.target.closest('a') || e.target.closest('button')) return;
     
-    card.classList.toggle('is-flipped');
+    const isCurrentlyFlipped = card.classList.contains('is-flipped');
+
+    // Reset all other cards so only one stays open at a time
+    flipCards.forEach(c => c.classList.remove('is-flipped'));
+
+    // Toggle current card
+    if (!isCurrentlyFlipped) {
+      card.classList.add('is-flipped');
+    }
   });
+});
+
+// Dismiss any flipped card when tapping anywhere outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.flip-card')) {
+    flipCards.forEach(c => c.classList.remove('is-flipped'));
+  }
 });

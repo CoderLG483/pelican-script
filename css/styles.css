@@ -459,6 +459,8 @@ site-header nav a.active {
   perspective: 1200px;
   height: 28rem; /* Concrete height anchors the grid row so cards cannot overlap */
   background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 2. Inner wrapper handles both the slight lift and 3D rotation */
@@ -470,12 +472,19 @@ site-header nav a.active {
   border-radius: 1rem;
 }
 
-/* 3. Hover state: elevates slightly first, then executes the smooth Y-flip */
-.flip-card:hover .flip-card-inner, .flip-card.is-flipped .flip-card-inner {
+/* 3. Mobile & Universal Class Flip (Driven strictly by tap) */
+.flip-card.is-flipped .flip-card-inner {
   transform: translateY(-6px) rotateY(180deg);
 }
 
-/* 4. Front & Back faces locked strictly to parent boundaries */
+/* 4. Desktop-Only Hover (Only for real mouse pointers, never mobile touches) */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: translateY(-6px) rotateY(180deg);
+  }
+}
+
+/* 5. Front & Back faces locked strictly to parent boundaries */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
