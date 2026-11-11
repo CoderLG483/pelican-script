@@ -1,10 +1,69 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & Inquiries | Pelican Script</title>
-  <meta name="description" content="Initiate a project consultation with Pelican Script. High-performance web systems engineered for Jamaican and Caribbean SMEs.">
+  
+  <!-- Primary Meta & Crawling Directives -->
+  <title>Contact &amp; Inquiries | Pelican Script</title>
+  <meta name="title" content="Contact &amp; Inquiries | Pelican Script">
+  <meta name="description" content="Initiate a project consultation with Pelican Script. High-performance web storefronts, business hubs, and digital tools engineered for Jamaican and Caribbean SMEs.">
+  <meta name="keywords" content="contact web developer Jamaica, Kingston web agency contact, Pelican Script consultation, WhatsApp business website, hire web developer Caribbean">
+  <meta name="author" content="Pelican Script">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pelicanscript.com/contact.html">
+
+  <!-- Geographic & Local Jamaican SEO Directives -->
+  <meta name="geo.region" content="JM-08">
+  <meta name="geo.placename" content="Kingston, Jamaica">
+  <meta name="geo.position" content="18.0179;-76.8099">
+  <meta name="ICBM" content="18.0179, -76.8099">
+
+  <!-- Open Graph / WhatsApp / Facebook / LinkedIn Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pelicanscript.com/contact.html">
+  <meta property="og:title" content="Contact &amp; Inquiries | Pelican Script">
+  <meta property="og:description" content="Direct lines of communication for bespoke web systems, pricing scope discussions, and free architectural discovery.">
+  <meta property="og:image" content="https://pelicanscript.com/img/logo.png">
+  <meta property="og:image:alt" content="Pelican Script Contact Dispatch Console">
+  <meta property="og:site_name" content="Pelican Script">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pelicanscript.com/contact.html">
+  <meta name="twitter:title" content="Contact &amp; Inquiries | Pelican Script">
+  <meta name="twitter:description" content="Direct lines of communication for bespoke web systems, pricing scope discussions, and free architectural discovery.">
+  <meta name="twitter:image" content="https://pelicanscript.com/img/logo.png">
+
+  <!-- Structured Data: ContactPage Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact & Inquiries",
+    "url": "https://pelicanscript.com/contact.html",
+    "description": "Direct communication channels and project intake form for Pelican Script.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Pelican Script",
+      "url": "https://pelicanscript.com/",
+      "telephone": "+18764883919",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+18764883919",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Japanese"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kingston",
+        "addressRegion": "St. Andrew",
+        "addressCountry": "JM"
+      }
+    }
+  }
+  </script>
   
   <!-- Brand icon -->
   <link rel="icon" type="image/png" href="icons/favicon.png" sizes="32x32"/>
@@ -27,6 +86,20 @@
       padding: 0;
       background-color: #080d14;
       color: #cbd5e1;
+    }
+
+    /* Elevate custom web component header above the page canvas */
+    site-header,
+    .site-header {
+      position: relative;
+      z-index: 50;
+      display: block;
+    }
+
+    /* Isolated Stacking Context so Header dropdown always stays in front */
+    #main-content {
+      position: relative;
+      z-index: 1;
     }
 
     /* Outer Centered Wrapper */
@@ -360,7 +433,16 @@
             Submit your core requirements below. We'll review your scope and follow up directly via your preferred channel.
           </p>
 
-          <form action="https://formspree.io/f/placeholder" method="POST" id="inquiry-form">
+          <form action="https://api.web3forms.com/submit" method="POST" id="inquiry-form">
+            <!-- Web3Forms Access Key Directive -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            
+            <!-- Email Subject In Inbox -->
+            <input type="hidden" name="subject" value="New Transmission // Pelican Script Web Inquiry">
+            
+            <!-- Anti-Spam Honeypot Guard -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
             <div class="form-group">
               <label for="client-name" class="form-label">&gt; YOUR NAME / ENTITY *</label>
               <input type="text" id="client-name" name="name" class="form-input" placeholder="e.g. John Brown / Acme Ltd." required>

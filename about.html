@@ -3,8 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta & Crawling Directives -->
   <title>About the Operator | Pelican Script</title>
+  <meta name="title" content="About the Operator | Pelican Script">
   <meta name="description" content="Meet Lincoln Green—computer science student at UWI Mona and founder of Pelican Script. Engineering bespoke, ultra-fast web systems for Caribbean SMEs.">
+  <meta name="keywords" content="Lincoln Green, Pelican Script founder, web developer Jamaica, UWI Mona computer science, Kingston web engineering, Caribbean tech entrepreneurs">
+  <meta name="author" content="Lincoln Green">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pelicanscript.com/about.html">
+
+  <!-- Geographic & Local Jamaican SEO Directives -->
+  <meta name="geo.region" content="JM-08">
+  <meta name="geo.placename" content="Kingston, Jamaica">
+  <meta name="geo.position" content="18.0179;-76.8099">
+  <meta name="ICBM" content="18.0179, -76.8099">
+
+  <!-- Open Graph / WhatsApp / Facebook / LinkedIn Cards -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://pelicanscript.com/about.html">
+  <meta property="og:title" content="About the Operator | Pelican Script">
+  <meta property="og:description" content="Meet Lincoln Green—systems builder, clean-code enthusiast, and founder of Pelican Script. Engineering high-performance digital assets for Caribbean SMEs.">
+  <meta property="og:image" content="https://pelicanscript.com/img/logo.png">
+  <meta property="og:image:alt" content="Lincoln Green - Pelican Script Terminal Operator">
+  <meta property="og:site_name" content="Pelican Script">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://pelicanscript.com/about.html">
+  <meta name="twitter:title" content="About the Operator | Pelican Script">
+  <meta name="twitter:description" content="Meet Lincoln Green—systems builder, clean-code enthusiast, and founder of Pelican Script.">
+  <meta name="twitter:image" content="https://pelicanscript.com/img/logo.png">
+
+  <!-- Structured Data: AboutPage & Person Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About the Operator",
+    "url": "https://pelicanscript.com/about.html",
+    "description": "Background, philosophy, and architectural vision of Lincoln Green, founder and lead architect of Pelican Script.",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Lincoln Green",
+      "jobTitle": "Lead Architect & Founder",
+      "worksFor": {
+        "@type": "ProfessionalService",
+        "name": "Pelican Script",
+        "url": "https://pelicanscript.com/"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "The University of the West Indies, Mona"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kingston",
+        "addressCountry": "JM"
+      },
+      "sameAs": [
+        "https://instagram.com/thepelicanscript"
+      ]
+    }
+  }
+  </script>
   
   <!-- Brand icon -->
   <link rel="icon" type="image/png" href="icons/favicon.png" sizes="32x32"/>
@@ -25,6 +88,20 @@
       overflow-x: clip;
       margin: 0;
       padding: 0;
+    }
+
+    /* Elevate custom web component header above the page canvas */
+    site-header,
+    .site-header {
+      position: relative;
+      z-index: 50;
+      display: block;
+    }
+
+    /* Isolated Stacking Context so Header dropdown always stays in front */
+    #main-content {
+      position: relative;
+      z-index: 1;
     }
 
     /* Outer Centered Wrapper */
