@@ -471,7 +471,7 @@ site-header nav a.active {
 }
 
 /* 3. Hover state: elevates slightly first, then executes the smooth Y-flip */
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner, .flip-card.is-flipped .flip-card-inner {
   transform: translateY(-6px) rotateY(180deg);
 }
 

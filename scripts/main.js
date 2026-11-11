@@ -18,3 +18,13 @@ if (navToggle && primaryNav) {
     });
   });
 }
+
+// Flip cards on tap/click for mobile & touch devices
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    // If the client tapped a link or button inside the card, let it navigate
+    if (e.target.closest('a') || e.target.closest('button')) return;
+    
+    card.classList.toggle('is-flipped');
+  });
+});
