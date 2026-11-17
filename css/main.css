@@ -4,7 +4,7 @@
 
 /* Base container for both buttons */
 .btn-whatsapp,
-.btn-instagram {
+.btn-instagram, .btn-linkedin {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,10 +85,45 @@
   transform: scale(1.1);
 }
 
+.btn-instagram .instagram-icon {
+  filter: invert(19%) sepia(94%) saturate(6284%) hue-rotate(324deg) brightness(101%) contrast(106%);
+}
+
+/* --- LinkedIn: Professional Neon Blue --- */
+.btn-linkedin {
+  border: 1.5px solid #0077B5;
+  color: #0077B5 !important;
+  box-shadow: 0 0 14px rgba(0, 119, 181, 0.2), inset 0 0 10px rgba(0, 119, 181, 0.05);
+}
+
+/* Recolor pure white icon to professional neon blue (#0077B5) 
+.btn-linkedin .linkedin-icon {
+  filter: invert(23%) sepia(94%) saturate(6284%) hue-rotate(324deg) brightness(101%) contrast(106%);
+}*/
+
+.btn-linkedin:hover {
+  background: #0077B5;
+  color: #ffffff !important;
+  box-shadow: 
+    0 0 20px rgba(0, 119, 181, 1),
+    0 0 35px rgba(0, 119, 181, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-linkedin:hover .linkedin-icon {
+  filter: brightness(0) invert(1); /* Flips icon back to crisp white on solid blue fill */
+  transform: scale(1.1);
+}
+
+/*.btn-linkedin .linkedin-icon {
+  filter: invert(23%) sepia(94%) saturate(6284%) hue-rotate(324deg) brightness(101%) contrast(106%);
+}*/
+
 /* Mobile responsive full-width stretch */
 @media (max-width: 480px) {
   .btn-whatsapp,
-  .btn-instagram {
+  .btn-instagram,
+  .btn-linkedin {
     width: 100%;
   }
 }
